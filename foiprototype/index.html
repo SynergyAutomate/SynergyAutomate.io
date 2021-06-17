@@ -46,6 +46,12 @@
     <link rel="stylesheet" href="pancake/css/pancake.min.css" />
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="local.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    /> -->
   </head>
 
   <body>
@@ -198,7 +204,7 @@
                     <label
                       class="au-control-input__text"
                       for="2_a"
-                      onclick="showDiv('q_3'), hideDiv('q_4')"
+                      onclick="showDiv('q_3'), hideDiv('q_4'),  hideDiv('q_foi_form')"
                       >Myself</label
                     >
                   </div>
@@ -208,7 +214,7 @@
                       type="radio"
                       name="radio_2"
                       id="2_b"
-                      onclick="showDiv('q_4'),  hideDiv('q_3')"
+                      onclick="showDiv('q_4'),  hideDiv('q_3'),  hideDiv('q_foi_form')"
                     />
                     <label class="au-control-input__text" for="2_b"
                       >Someone else
@@ -220,20 +226,16 @@
                       type="radio"
                       name="radio_2"
                       id="2_c"
-                      onclick="hideDiv('q_3'), hideDiv('q_4')"
+                      onclick="showDiv('q_foi_form'), hideDiv('q_3'), hideDiv('q_4')"
                     />
                     <label class="au-control-input__text" for="2_c">
                       The Department of Home Affairs
                     </label>
                   </div>
                   <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_2"
-                      id="2_d"
-                      onclick="hideDiv('q_3'), hideDiv('q_4')"
-                    />
+                    <input class="au-control-input__input" type="radio"
+                    name="radio_2" id="2_d" onclick="hideDiv('q_3'),
+                    hideDiv('q_4'), hideDiv('q_foi_form')"" />
                     <label class="au-control-input__text" for="2_d">
                       Another Government organisation
                     </label>
@@ -396,417 +398,180 @@
                   <h3 class="au-callout__heading">Complete the consent form</h3>
                 </div>
 
-                <div id="all" class="dis-none">
-                  <legend class="au-fieldset__legend">
-                    <h3 class="au-display-xxl">Applicant name</h3>
-                  </legend>
+                <!-- FOI form  -->
+                <div id="q_foi_form" class="au-form-group dis-none">
+                  <h3 class="au-callout__heading">FOI form</h3>
+
                   <div class="au-form-group">
-                    <label class="au-label" for="name">Title </label>
-
-                    <div class="au-control-input">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio-title"
-                        id="radio-title-ms"
-                        onclick="hideDiv('titleOther')"
-                      />
-                      <label class="au-control-input__text" for="radio-title-ms"
-                        >Ms</label
-                      >
-                    </div>
-                    <div class="au-control-input">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio-title"
-                        id="radio-title-mr"
-                        onclick="hideDiv('titleOther')"
-                      />
-                      <label class="au-control-input__text" for="radio-title-mr"
-                        >Mr</label
-                      >
-                    </div>
-                    <div class="au-control-input">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio-title"
-                        id="radio-title-other"
-                        onclick="showDiv('titleOther')"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="radio-title-other"
-                        >Other</label
-                      >
-                    </div>
-                  </div>
-
-                  <div class="au-form-group dis-none" id="titleOther">
-                    <label class="au-label" for="name">Other title</label>
+                    <label for="name_first" class="au-label">Given name</label>
+                    <span
+                      class="au-error-text hide_content"
+                      id="name_first-error"
+                    ></span>
                     <input
+                      class="au-text-input au-text-input--width-lg"
+                      name="First name"
+                      id="name_first"
                       type="text"
-                      class="au-text-input au-text-input--block"
-                      id="name"
+                      aria-required="true"
+                      aria-describedby="full-name-error"
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="au-form-group">
+                    <label for="name_last" class="au-label">Family name</label>
+                    <span
+                      class="au-error-text hide_content"
+                      id="name_last-error"
+                    ></span>
+                    <input
+                      class="au-text-input au-text-input--width-lg"
+                      name="Last name"
+                      id="name_last"
+                      type="text"
+                      aria-required="true"
+                      aria-describedby="full-name-error"
+                      autocomplete="name"
                     />
                   </div>
 
                   <div class="au-form-group">
-                    <label class="au-label" for="name">First Name</label>
+                    <label for="email" class="au-label">Email address</label>
+                    <span
+                      class="au-error-text hide_content"
+                      id="email-error"
+                    ></span>
                     <input
+                      class="au-text-input au-text-input--width-lg"
+                      name="Email"
+                      id="Email"
                       type="text"
-                      class="au-text-input au-text-input--block"
-                      id="name"
+                      aria-required="true"
+                      aria-describedby="email"
+                      autocomplete="email"
                     />
                   </div>
-                  <div class="au-form-group au-form-group--block">
-                    <label class="au-label" for="surname">Surname</label>
-                    <input
-                      type="surname"
-                      class="au-text-input au-text-input--block"
-                      id="surname"
-                      aria-invalid="true"
-                    />
-                  </div>
+                  <div class="au-form-group">
+                    <fieldset class="au-fieldset">
+                      <legend class="au-fieldset__legend">
+                        <h3 class="au-display-xxl">
+                          Tell us about the document(s) you're seeking
+                        </h3>
+                        <!-- <span class="au-hint-text">You may select more than one</span> -->
+                      </legend>
 
-                  <div class="au-form-group au-form-group">
-                    <label class="au-label" for="surname">Date of Birth</label>
-                    <input
-                      type="surname"
-                      class="au-text-input au-text-input--block"
-                      id="surname"
-                      aria-invalid="true"
-                    />
-                  </div>
+                      <legend><h4>Document 1</h4></legend>
+                      <label for="email" class="au-label"
+                        >Document reference number (if know)
+                      </label>
 
-                  <div class="au-form-group au-form-group">
-                    <label class="au-label" for="surname">Phone number</label>
-                    <input
-                      type="surname"
-                      class="au-text-input au-text-input--block"
-                      id="surname"
-                      aria-invalid="true"
-                    />
-                  </div>
-
-                  <legend class="au-fieldset__legend">
-                    <h3 class="au-display-xxl">Applicant postal address</h3>
-                  </legend>
-
-                  <div class="au-form-group au-form-group">
-                    <form id="form-box" method="get">
-                      <div class="form-header">Address Line 1</div>
                       <input
-                        type="search"
-                        class="au-text-input au-text-input--block"
-                        id="addrs_1"
-                        placeholder="Search address here..."
-                      />
-
-                      <div class="form-header">Address Line 2</div>
-                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Document reference number"
+                        id="name"
                         type="text"
-                        class="au-text-input au-text-input--block"
-                        id="addrs_2"
+                        aria-required="true"
+                        aria-describedby="email"
+                        autocomplete="email"
                       />
+                      <label for="email" class="au-label"
+                        >Document Date (if know)</label
+                      >
 
-                      <div class="form-header">Suburb</div>
                       <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Document reference number"
+                        id="name"
                         type="text"
-                        class="au-text-input au-text-input--block"
-                        id="suburb"
+                        aria-required="true"
+                        aria-describedby="email"
+                        autocomplete="email"
                       />
 
-                      <div class="form-header">State</div>
-                      <input
+                      <label for="email" class="au-label"
+                        >Clearly describe the document</label
+                      >
+
+                      <textarea
                         class="au-text-input au-text-input--block"
-                        id="state"
-                      />
-
-                      <div class="form-header">Postcode</div>
-                      <input
-                        class="au-text-input au-text-input--block"
-                        id="postcode"
-                      />
-                    </form>
+                        name="textarea"
+                        id="textarea"
+                      >
+                      </textarea>
+                      <br />
+                      <a class="au-cta-link" href="#"
+                        >Add an additional document
+                        <i data-feather="plus-circle" class="icon"></i
+                      ></a>
+                    </fieldset>
                   </div>
 
-                  <div class="au-form-group au-form-group">
-                    <h3>
-                      Would you like your notifications sent to you by email?
-                    </h3>
-                  </div>
-
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-email"
-                      id="radio-email-yes"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-email-yes"
-                      onclick="showDiv('emailAddress')"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-email"
-                      id="radio-email-no"
-                      checked
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-email-no"
-                      onclick="hideDiv('emailAddress')"
-                      >No</label
-                    >
-                  </div>
-
-                  <div
-                    class="au-form-group au-form-group dis-none"
-                    id="emailAddress"
-                  >
-                    <label class="au-label" for="surname"> Email address</label>
-                    <input
-                      type="surname"
-                      class="au-text-input au-text-input--block"
-                      id="surname"
-                      aria-invalid="true"
-                    />
-                  </div>
-
-                  <legend class="au-fieldset__legend">
+                  <div class="au-form-group">
                     <h3 class="au-display-xxl">
-                      Is this a request for another person’s personal
-                      information?
+                      Would you like your FOI notification sent to you by email?
                     </h3>
-                  </legend>
-
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-personal"
-                      id="radio-personal-yes"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-personal-yes"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-personal"
-                      id="radio-personal-no"
-                      checked
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-personal-no"
-                      >No</label
-                    >
-                  </div>
-
-                  <div class="au-form-group au-form-group">
-                    <h3 class="au-display-xxl">Document(s) required:</h3>
-                    <label class="au-label" for="surname">
-                      Tick and complete all that apply
-                    </label>
 
                     <div class="au-control-input au-control-input--block">
                       <input
                         class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox-ex"
-                        id="sa-cb-block"
+                        type="radio"
+                        name="radio_email"
+                        id="email_yes"
+                        onclick=" hideDiv('postal')"
+                        checked
                       />
-                      <label class="au-control-input__text" for="sa-cb-block"
-                        >Services Australia</label
+                      <label class="au-control-input__text" for="email_yes"
+                        >Yes</label
                       >
                     </div>
-
                     <div class="au-control-input au-control-input--block">
                       <input
                         class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox-ex"
-                        id="cl-cb-block"
+                        type="radio"
+                        name="radio_email"
+                        id="email_no"
+                        onclick="showDiv('postal')"
                       />
-                      <label
-                        class="au-control-input__text"
-                        for="cl-cb-block"
-                        onclick="toggleDiv('centrelink')"
-                        >Centrelink</label
-                      >
-                    </div>
-                    <div
-                      class="au-control-input au-control-input--block dis-none"
-                      id="centrelink"
-                    >
-                      <label class="au-label" for="surname">
-                        Centrelink Reference Number</label
-                      >
-
-                      <input
-                        type="surname"
-                        class="au-text-input au-text-input--block"
-                        id="surname"
-                        aria-invalid="true"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox-ex"
-                        id="mc-cb-block"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="mc-cb-block"
-                        onclick="toggleDiv('medicare')"
-                        >Medicare</label
-                      >
-                    </div>
-                    <div
-                      class="au-control-input au-control-input--block dis-none"
-                      id="medicare"
-                    >
-                      <label class="au-label" for="surname">
-                        Medicare card number</label
-                      >
-
-                      <input
-                        type="surname"
-                        class="au-text-input au-text-input--block"
-                        id="surname"
-                        aria-invalid="true"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox-ex"
-                        id="cs-cb-block"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="cs-cb-block"
-                        onclick="toggleDiv('cs')"
-                      >
-                        Child Support
+                      <label class="au-control-input__text" for="email_no"
+                        >No
                       </label>
                     </div>
-                    <div
-                      class="au-control-input au-control-input--block dis-none"
-                      id="cs"
-                    >
-                      <label class="au-label" for="surname">
-                        Child Support Reference Number</label
-                      >
+                  </div>
 
-                      <input
-                        type="surname"
-                        class="au-text-input au-text-input--block"
-                        id="surname"
-                        aria-invalid="true"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox-ex"
-                        id="crs-cb-block"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="crs-cb-block"
-                        onclick="toggleDiv('crs')"
-                        >CRS
-                      </label>
-                    </div>
-                    <div
-                      class="au-control-input au-control-input--block dis-none"
-                      id="crs"
-                    >
-                      <label class="au-label" for="surname">
-                        CRS Reference Number</label
-                      >
-
-                      <input
-                        type="surname"
-                        class="au-text-input au-text-input--block"
-                        id="surname"
-                        aria-invalid="true"
-                      />
+                  <div id="postal" class="au-form-group dis-none">
+                    <legend class="au-fieldset__legend">
+                      <h3 class="au-display-xxl">Postal address</h3>
+                    </legend>
+      
+                    <div class="au-form-group au-form-group">
+      
+                      <form id="form-box" method="get">
+      
+                        <div class="form-header">Address Line 1</div>
+                        <input type="search" class="au-text-input au-text-input--block" id="addrs_1"
+                          placeholder="Search address here..."></input>
+      
+      
+                        <div class="form-header">Address Line 2</div>
+                        <input type="text" class="au-text-input au-text-input--block" id="addrs_2"></input>
+      
+                        <div class="form-header">Suburb</div>
+                        <input type="text" class="au-text-input au-text-input--block" id="suburb"></input>
+      
+                        <div class="form-header">State</div>
+                        <input class="au-text-input au-text-input--block" id="state"></input>
+      
+                        <div class="form-header">Postcode</div>
+                        <input class="au-text-input au-text-input--block" id="postcode"></input>
+      
+      
+                      </form>
+      
+      
                     </div>
                   </div>
-
-                  <div class="au-form-group au-form-group">
-                    <label class="au-label" for="surname">
-                      Do If you'd like to request a copy of or to inspect a
-                      document?</label
-                    >
-                  </div>
-
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-inspect"
-                      id="radio-inspect-request"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-inspect-request"
-                      >Request a copy</label
-                    >
-                  </div>
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-inspect"
-                      id="radio-inspect-inspect"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-inspect-inspect"
-                      >Inspect</label
-                    >
-                  </div>
-                  <div class="au-control-input">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio-inspect"
-                      id="radio-inspect-neither"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="radio-inspect-neither"
-                      >Neither</label
-                    >
-                  </div>
-
-                  <div class="au-form-group au-form-group">
-                    <br /><br /><br />
-                    <button class="au-btn">Submit request</button>
-                  </div>
+                  <br /><br />
+                  <button class="au-btn">Submit</button>
                 </div>
 
                 <br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -847,5 +612,8 @@
 
     <!-- Component javscript -->
     <script src="pancake/js/pancake.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>

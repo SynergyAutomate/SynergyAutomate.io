@@ -1,3 +1,4 @@
+
 (function () {
   var widget,
     initAddressFinder = function () {

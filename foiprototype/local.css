@@ -56,3 +56,7 @@ ul.af_list {
 .af_footer {
   display: none;
 }
+
+.icon {
+  margin-bottom: -6px;
+}
