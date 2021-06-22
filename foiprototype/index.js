@@ -33,9 +33,6 @@
   document.addEventListener("DOMContentLoaded", downloadAddressFinder);
 })();
 
-// import "tailwindcss/tailwind.css"
-
-// alert("asdf");
 
 var show = function (elem) {
   elem.style.display = "block";
@@ -88,7 +85,6 @@ const hideElement = (id) => {
 
   if (window.getComputedStyle(elem).display === "block") {
     hide(elem);
-    return;
   }
 };
 
