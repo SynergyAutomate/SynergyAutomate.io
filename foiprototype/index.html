@@ -105,19 +105,21 @@
                       seeking.
                     </h2>
                     <p>
-                      Note that FOI cannot provide personal advice, explanations
-                      in relation to departmental matters or progress reports on
-                      applications that are in process. You do not need to make
-                      an FOI request if If you'd like copies of your own:
+                      Please note that FOI cannot provide personal advice,
+                      explanations in relation to departmental matters or
+                      progress reports on applications that are in process.
+                    </p>
+                    <p>
+                      You do not need to make an FOI request if you want copies
+                      of your own:
                     </p>
                     <ul>
-                      <li>Visa information</li>
-                      <li>Cisizenship information</li>
+                      <li>Visa or Citizenship information</li>
                     </ul>
 
                     <p>
-                      Make sure you have the following details ready before you
-                      start:
+                      Please make sure you have the following details ready
+                      before you start:
                     </p>
                     <ul>
                       <li>Document reference numbers</li>
@@ -204,7 +206,7 @@
                     <label
                       class="au-control-input__text"
                       for="2_a"
-                      onclick="showDiv('q_3'), hideDiv('q_4'),  hideDiv('q_foi_form')"
+                      onclick="showElement('q_3'), hideElement('q_4'),  hideElement('q_foi_form')"
                       >Myself</label
                     >
                   </div>
@@ -214,7 +216,7 @@
                       type="radio"
                       name="radio_2"
                       id="2_b"
-                      onclick="showDiv('q_4'),  hideDiv('q_3'),  hideDiv('q_foi_form')"
+                      onclick="showElement('q_4'),  hideElement('q_3'),  hideElement('q_foi_form')"
                     />
                     <label class="au-control-input__text" for="2_b"
                       >Someone else
@@ -226,16 +228,21 @@
                       type="radio"
                       name="radio_2"
                       id="2_c"
-                      onclick="showDiv('q_foi_form'), hideDiv('q_3'), hideDiv('q_4')"
+                      onclick="showElement('q_foi_form'), hideElement('q_3'), hideElement('q_4')"
                     />
                     <label class="au-control-input__text" for="2_c">
                       The Department of Home Affairs
                     </label>
                   </div>
                   <div class="au-control-input au-control-input--block">
-                    <input class="au-control-input__input" type="radio"
-                    name="radio_2" id="2_d" onclick="hideDiv('q_3'),
-                    hideDiv('q_4'), hideDiv('q_foi_form')"" />
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_2"
+                      id="2_d"
+                      onclick="hideElement('q_3'),
+                    hideElement('q_4'), hideElement('q_foi_form')"
+                    />
                     <label class="au-control-input__text" for="2_d">
                       Another Government organisation
                     </label>
@@ -246,105 +253,267 @@
                 <!-- 3 -->
                 <div id="q_3" class="au-form-group dis-none">
                   <h3 class="au-callout__heading">
-                    What information are YOU wanting to access about YOURSELF?
+                    What information are you wanting to access about YOURSELF?
                   </h3>
 
-                  <p>
-                    If If you'd like to access a previous application or
-                    document you provided to the Department
-                  </p>
                   <h3 class="au-display-xxl">Visa and Citizenship requests:</h3>
+                  <p>
+                    Do you want to access documents or details you provided to
+                    the Department?
+                  </p>
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_3_a"
+                      id="3_a_yes"
+                      onclick="showElement('q_3_a_yes'), hideElement('q_3_a_no')"
+                    />
+                    <label class="au-control-input__text" for="3_a_yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_3_a"
+                      id="3_a_no"
+                      onclick="showElement('q_3_a_no'), hideElement('q_3_a_yes')"
+                    />
+                    <label class="au-control-input__text" for="3_a_no">
+                      No
+                    </label>
+                  </div>
 
-                  <ol>
-                    <li>
-                      If you'd like to request
-                      <strong> evidence of current visa status </strong>
-                      to provide proof for another government agency or
-                      employer, visit
-                      <a
-                        href="https://immi.homeaffairs.gov.au/Pages/PageNotFoundError.aspx?requestUrl=https://immi.homeaffairs.gov.au/visas/already-%20have-a-visa/check-visa-details-and-conditions/check-%20conditions-online"
-                        >Visa Entitlement Verification Online (VEVO)</a
-                      >.
-                    </li>
-                    <li>
-                      If you'd like to request a copy of your
-                      <strong> visa application</strong>
-                      for your own records and are a long term resident who
-                      arrived in Australia before 1990 and have not left the
-                      country since your arrival, visit
-                      <a
-                        href="https://immi.homeaffairs.gov.au/%20visas/permanent-resident/evidence-of-residency-status/%20request-an-electronic-visa-record"
-                        >IMMI</a
-                      >.
-                    </li>
-                    <li>
-                      If you'd like to request a
-                      <strong> visa grant number</strong> for your own records,
-                      visit <a href="#">???</a>
-                    </li>
-                    <li>
-                      If you'd like to apply for <strong> ImmiCard </strong> for
-                      ???
-                    </li>
-                    <li>
-                      If you'd like to request evidence of a
-                      <strong> deceased person’s citizenship </strong> status
-                      for your own records GO TO …
-                    </li>
-                    <li>
-                      If you'd like to request a copy of your
-                      <strong> Australian Citizen Certificate </strong> for your
-                      own records • GO TO … Evidence of your Australian
-                      Citizenship, please complete form 119 Application for
-                      evidence of Australian citizenship.
-                    </li>
-                    <li>
-                      If you'd like to request a copy of your
-                      <strong> International Movement information </strong> for
-                      your own records • GO TO … Your International Movement
-                      records, please complete form 1359 Request for
-                      international movement records.
-                    </li>
-                    <li>
-                      If you'd like to request a copy of your
-                      <strong> Immigration Status Certificate </strong> for your
-                      own records • GO TO … Your superannuation status, please
-                      complete form 1194 Certification of Immigration Status
-                      and/or request to cancel a Temporary Resident visa.
-                    </li>
-                    <li>
-                      If you'd like to request a copy of your Immigration Status
-                      Certificate as proof of
-                      <strong>Superannuation Status </strong> • GO TO … Your
-                      superannuation status, please complete form 1194
-                      Certification of Immigration Status and/or request to
-                      cancel a Temporary Resident visa.
-                    </li>
-                    <li>
-                      If you'd like to request to cancel a
-                      <strong> Temporary Resident visa </strong> for your own
-                      records • GO TO … Your superannuation status, please
-                      complete form 1194 Certification of Immigration Status
-                      and/or request to cancel a Temporary Resident visa.
-                    </li>
-                  </ol>
+                  <div id="q_3_a_yes" class="au-form-group dis-none">
+                    <ol>
+                      <li>
+                        ImmiAccount gives clients immediate access to e-lodged
+                        application forms, supporting documentation and
+                        departmental correspondence, such as grant letters.
+                        <ul>
+                          <li>
+                            If you'd like a copy of your
+                            <strong> visa application</strong> for your own
+                            records or your original application was made
+                            through ImmiAccount, please login to your
+                            <a
+                              href="https://immi.homeaffairs.gov.au/ visas/permanent-resident/evidence-of-residency-status/ request-an-electronic-visa-record"
+                              >ImmiAccount</a
+                            >
+                          </li>
+                          <li>
+                            If you’d like to access your Document for Travel to
+                            Australia (DFTTA),
+                            <a
+                              href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/immicard/step-by-step"
+                            >
+                              apply for an ImmiCard.</a
+                            >
+                          </li>
+                          <li>
+                            If you'd like a copy of your
+                            <strong>
+                              permanent residency visa or current visa status
+                            </strong>
+                            for your own records and are a long term resident
+                            who arrived in Australia before 1990 and have not
+                            left the country since your arrival,
+                            <a
+                              href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/immicard/step-by-step"
+                            >
+                              apply for an ImmiCard.</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        If you'd like to request to cancel a
+                        <strong> Temporary Resident visa </strong> for you or
+                        your partner,
+                        <a
+                          href="https://immi.homeaffairs.gov.au/form-listing/forms/1194.pdf"
+                        >
+                          please complete form 1194 Certification of Immigration
+                          Status</a
+                        >
+                      </li>
+                    </ol>
+                  </div>
+                  <div id="q_3_a_no" class="au-form-group dis-none">
+                    <p>
+                      Do you want to access documents or details
+                      <strong> owned by the Department</strong>?
+                    </p>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_3_b"
+                        id="3_b_yes"
+                        onclick="showElement('q_3_b_yes'), hideElement('q_3_b_no')"
+                      />
+                      <label class="au-control-input__text" for="3_b_yes">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_3_b"
+                        id="3_b_no"
+                        onclick="showElement('q_3_b_no'), hideElement('q_3_b_yes')"
+                      />
+                      <label class="au-control-input__text" for="3_b_no">
+                        No
+                      </label>
+                    </div>
 
-                  <h3 class="au-display-xxl">Other types of requests:</h3>
-                  <ol>
-                    <li>Detention</li>
+                    <div id="q_3_b_yes" class="au-form-group dis-none">
+                      <ol>
+                        <li>
+                          If you’d like to request evidence of your
+                          <strong> current visa status</strong> as proof of
+                          permanent residency, permission or visa status, or to
+                          apply for work or Medicare or to update details for a
+                          new request, visit
+                          <a
+                            href="https://immi.homeaffairs.gov.au/Pages/PageNotFoundError.aspx?requestUrl=https://immi.homeaffairs.gov.au/visas/already-%20have-a-visa/check-visa-details-and-conditions/check-%20conditions-online"
+                          >
+                            Visa Entitlement Verification Online (VEVO)</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your
+                          <strong> Australian Citizen Certificate </strong>for
+                          your own records,
+                          <a
+                            href="https://immi.homeaffairs.gov.au/form-listing/forms/119.pdf"
+                          >
+                            please complete form 119 Application for evidence of
+                            Australian citizenship</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a
+                          <strong> visa grant number </strong>for your own
+                          records, you will need call the DATACOM staff and
+                          provide proof of your identity
+                          <!-- (what are the details?) -->
+                          .
+                        </li>
+                        <li>
+                          If you'd like to request evidence of a
+                          <strong> deceased person’s citizenship</strong> status
+                          for your own records,
+                          <a
+                            href="https://immi.homeaffairs.gov.au/form-listing/forms/1391.pdf"
+                          >
+                            please complete form 1391 Request for confirmation
+                            of Australian citizenship status of a deceased
+                            person</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your
+                          <strong> International Movement information</strong>
+                          for your own records,
+                          <a
+                            href="https://immi.homeaffairs.gov.au/form-listing/forms/1359.pdf"
+                          >
+                            please complete form 1359 Request for international
+                            movement records</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your Certificate of
+                          Immigration Status as proof of
+                          <strong> Superannuation Status</strong>,
+                          <a
+                            href="https://immi.homeaffairs.gov.au/form-listing/forms/1194.pdf"
+                          >
+                            please complete form 1194 Certification of
+                            Immigration Status</a
+                          >.
+                        </li>
+                      </ol>
+                    </div>
 
-                    <li>Health records</li>
-                    <li>My Visa</li>
-                    <li>My Citizenship</li>
-                    <li>File number</li>
-                    <li>Movement records/management</li>
-                    <li>Interaction from airports</li>
-                    <li>Statistical Data</li>
-                    <li>Amend personal info</li>
-                    <li>Visa and immigration renewal</li>
-                    <li>Tariff</li>
-                    <li>Dept staff</li>
-                  </ol>
+                    <div id="q_3_b_no" class="au-form-group dis-none">
+                      <p>
+                        Do you want to update your documents or details owned
+                        <strong> by</strong>
+                        the Department
+                      </p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_3_c"
+                          id="3_c_yes"
+                          onclick="showElement('q_3_c_yes'), hideElement('q_3_c_no')"
+                        />
+                        <label class="au-control-input__text" for="3_c_yes">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_3_c"
+                          id="3_c_no"
+                          onclick="showElement('q_3_c_no'), hideElement('q_3_c_yes')"
+                        />
+                        <label class="au-control-input__text" for="3_c_no">
+                          No
+                        </label>
+                      </div>
+
+                      <div id="q_3_c_yes" class="au-form-group dis-none">
+                        <ol>
+                          <li>
+                            If you’d like to request an update be made to your
+                            contact details (address, passport name, contact
+                            details or gender or you wish to provide updated
+                            identity (marriage, birth certificate) or business
+                            documents to the Department, please refer to the
+                            <a
+                              href="https://immi.homeaffairs.gov.au/change-in-situation"
+                            >
+                              Changes in Situation</a
+                            >
+                            page of the website.
+                          </li>
+                        </ol>
+                      </div>
+                      <div id="q_3_c_no" class="au-form-group dis-none">
+                        <p>
+                          If you think the information the Department owns about
+                          you is:
+                        </p>
+                        <ul>
+                          <li>
+                            is incomplete, incorrect, out of date or misleading
+                          </li>
+                          <li>
+                            has been, is being, or is available to be used for
+                            an administrative purpose
+                          </li>
+                        </ul>
+                        <p>
+                          please complete the
+                          <a
+                            onclick="showElement('q_foi_form', true)"
+                            href="javascript:;"
+                            >FOI request form</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- 4 -->
@@ -368,7 +537,7 @@
                     <label
                       class="au-control-input__text"
                       for="4_a"
-                      onclick="showDiv('q_personal_list'), hideDiv('q_consent_form')"
+                      onclick="showElement('q_personal_list'), hideElement('q_consent_form')"
                       >Yes</label
                     >
                   </div>
@@ -382,7 +551,7 @@
                     <label
                       class="au-control-input__text"
                       for="4_b"
-                      onclick="showDiv('q_consent_form') , hideDiv('q_personal_list')"
+                      onclick="showElement('q_consent_form') , hideElement('q_personal_list')"
                       >No</label
                     >
                   </div>
@@ -400,7 +569,7 @@
 
                 <!-- FOI form  -->
                 <div id="q_foi_form" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">FOI form</h3>
+                  <h3 class="au-callout__heading">Access to information</h3>
 
                   <div class="au-form-group">
                     <label for="name_first" class="au-label">Given name</label>
@@ -457,47 +626,49 @@
                         <h3 class="au-display-xxl">
                           Tell us about the document(s) you're seeking
                         </h3>
-                        <!-- <span class="au-hint-text">You may select more than one</span> -->
                       </legend>
 
-                      <legend><h4>Document 1</h4></legend>
-                      <label for="email" class="au-label"
-                        >Document reference number (if know)
-                      </label>
+                      <!-- irritable section for adding more than one doc -->
+                      <div>
+                        <legend><h4>Document 1</h4></legend>
+                        <label for="email" class="au-label"
+                          >Document reference number (if know)
+                        </label>
 
-                      <input
-                        class="au-text-input au-text-input--width-lg"
-                        name="Document reference number"
-                        id="name"
-                        type="text"
-                        aria-required="true"
-                        aria-describedby="email"
-                        autocomplete="email"
-                      />
-                      <label for="email" class="au-label"
-                        >Document Date (if know)</label
-                      >
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="Document reference number"
+                          id="name"
+                          type="text"
+                          aria-required="true"
+                          aria-describedby="email"
+                          autocomplete="email"
+                        />
+                        <label for="email" class="au-label"
+                          >Document Date (if know)</label
+                        >
 
-                      <input
-                        class="au-text-input au-text-input--width-lg"
-                        name="Document reference number"
-                        id="name"
-                        type="text"
-                        aria-required="true"
-                        aria-describedby="email"
-                        autocomplete="email"
-                      />
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="Document reference number"
+                          id="name"
+                          type="text"
+                          aria-required="true"
+                          aria-describedby="email"
+                          autocomplete="email"
+                        />
 
-                      <label for="email" class="au-label"
-                        >Clearly describe the document</label
-                      >
+                        <label for="email" class="au-label"
+                          >Clearly describe the document</label
+                        >
 
-                      <textarea
-                        class="au-text-input au-text-input--block"
-                        name="textarea"
-                        id="textarea"
-                      >
-                      </textarea>
+                        <textarea
+                          class="au-text-input au-text-input--block"
+                          name="textarea"
+                          id="textarea"
+                        >
+                        </textarea>
+                      </div>
                       <br />
                       <a class="au-cta-link" href="#"
                         >Add an additional document
@@ -507,9 +678,9 @@
                   </div>
 
                   <div class="au-form-group">
-                    <h3 class="au-display-xxl">
+                    <p>
                       Would you like your FOI notification sent to you by email?
-                    </h3>
+                    </p>
 
                     <div class="au-control-input au-control-input--block">
                       <input
@@ -517,7 +688,7 @@
                         type="radio"
                         name="radio_email"
                         id="email_yes"
-                        onclick=" hideDiv('postal')"
+                        onclick=" hideElement('postal')"
                         checked
                       />
                       <label class="au-control-input__text" for="email_yes"
@@ -530,7 +701,7 @@
                         type="radio"
                         name="radio_email"
                         id="email_no"
-                        onclick="showDiv('postal')"
+                        onclick="showElement('postal')"
                       />
                       <label class="au-control-input__text" for="email_no"
                         >No
@@ -542,34 +713,191 @@
                     <legend class="au-fieldset__legend">
                       <h3 class="au-display-xxl">Postal address</h3>
                     </legend>
-      
+
                     <div class="au-form-group au-form-group">
-      
                       <form id="form-box" method="get">
-      
                         <div class="form-header">Address Line 1</div>
-                        <input type="search" class="au-text-input au-text-input--block" id="addrs_1"
-                          placeholder="Search address here..."></input>
-      
-      
+                        <input
+                          type="search"
+                          class="au-text-input au-text-input--block"
+                          id="addrs_1"
+                          placeholder="Search address here..."
+                        />
+
                         <div class="form-header">Address Line 2</div>
-                        <input type="text" class="au-text-input au-text-input--block" id="addrs_2"></input>
-      
+                        <input
+                          type="text"
+                          class="au-text-input au-text-input--block"
+                          id="addrs_2"
+                        />
+
                         <div class="form-header">Suburb</div>
-                        <input type="text" class="au-text-input au-text-input--block" id="suburb"></input>
-      
+                        <input
+                          type="text"
+                          class="au-text-input au-text-input--block"
+                          id="suburb"
+                        />
+
                         <div class="form-header">State</div>
-                        <input class="au-text-input au-text-input--block" id="state"></input>
-      
+                        <input
+                          class="au-text-input au-text-input--block"
+                          id="state"
+                        />
+
                         <div class="form-header">Postcode</div>
-                        <input class="au-text-input au-text-input--block" id="postcode"></input>
-      
-      
+                        <input
+                          class="au-text-input au-text-input--block"
+                          id="postcode"
+                        />
                       </form>
-      
-      
                     </div>
                   </div>
+
+                  <div class="au-form-group">
+                    <label for="your_location">Your location:</label>
+                    <select
+                      id="your_location"
+                      class="au-select au-select--block"
+                    >
+                      <option value="">Please select</option>
+                      <option value="ACT">Australian Capital Territory</option>
+                      <option value="NSW">New South Wales</option>
+                      <option value="NT ">Northern Territory</option>
+                      <option value="QLD">Queensland</option>
+                      <option value="SA ">South Australia</option>
+                      <option value="TAS">Tasmania</option>
+                      <option value="VIC">Victoria</option>
+                      <option value="WA">Western Australia</option>
+                      <option value="OS">Outside of Australia</option>
+                    </select>
+                  </div>
+
+                  <div class="au-form-group">
+                    <p>Have you been known by any other names?</p>
+
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_2"
+                        id="radio_foi_2_yes"
+                        onclick="showElement('q_foi_2_yes')"
+                      />
+                      <label
+                        class="au-control-input__text"
+                        for="radio_foi_2_yes"
+                      >
+                        Yes
+                      </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_2"
+                        id="radio_foi_2_no"
+                        onclick="hideElement('q_foi_2_yes')"
+                      />
+                      <label
+                        class="au-control-input__text"
+                        for="radio_foi_2_no"
+                      >
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+                  <div id="q_foi_2_yes" class="au-form-group dis-none">
+                    <div class="au-form-group">
+                      <label for="other_given_name" class="au-label"
+                        >Other given name</label
+                      >
+                      <span class="au-hint-text" id="other-given-name-hint">
+                        If you only have one name, enter your name in the Family
+                        Name field.</span
+                      >
+
+                      <span
+                        class="au-error-text hide_content"
+                        id="other_given_name-error"
+                      ></span>
+                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="First name"
+                        id="other_given_name"
+                        type="text"
+                        aria-required="true"
+                        aria-describedby="other-given-name-error"
+                        autocomplete="name"
+                      />
+                    </div>
+                    <div class="au-form-group">
+                      <label for="other_family_name" class="au-label"
+                        >Other family name</label
+                      >
+                      <span
+                        class="au-error-text hide_content"
+                        id="other_family_name-error"
+                      ></span>
+                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Last name"
+                        id="other_family_name"
+                        type="text"
+                        aria-required="true"
+                        aria-describedby="other-family-name-error"
+                        autocomplete="name"
+                      />
+                    </div>
+                  </div>
+                  <!-- <div id="q_foi_2_no" class="au-form-group dis-none">no</div> -->
+                  <div class="au-form-group">
+                    <label for="date_of_birth" class="au-label"
+                      >Date of birth</label
+                    >
+                    <span
+                      class="au-error-text hide_content"
+                      id="date_of_birth-error"
+                    ></span>
+                    <input
+                      class="au-text-input au-text-input--width-lg"
+                      name="Date of birth"
+                      id="date_of_birth"
+                      type="text"
+                      aria-required="true"
+                      aria-describedby="date-of-birth-error"
+                      autocomplete="name"
+                    />
+                  </div>
+
+                  <div class="au-form-group">
+                    <p>
+                      Do you have any of the following identification numbers?
+                      If so, enter your identification or reference number(s)
+                    </p>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="checkbox"
+                        name="checkbox_boat_ID"
+                        id="checkbox_boat_ID"
+                        onchange="toggleElement('input_boat_ID');"
+                      />
+                      <label
+                        class="au-control-input__text"
+                        for="checkbox_boat_ID"
+                        >Boat ID</label
+                      >
+                      <input
+                        class="au-text-input dis-none"
+                        name="input_boat_ID"
+                        id="input_boat_ID"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+
                   <br /><br />
                   <button class="au-btn">Submit</button>
                 </div>

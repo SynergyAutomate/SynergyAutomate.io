@@ -1,4 +1,3 @@
-
 (function () {
   var widget,
     initAddressFinder = function () {
@@ -59,7 +58,7 @@ var toggle = function (elem) {
   show(elem);
 };
 
-const toggleDiv = (id) => {
+const toggleElement = (id) => {
   console.log("🏄🏻‍♂️ ~ id", id);
   const elem = document.getElementById(id);
 
@@ -70,20 +69,28 @@ const toggleDiv = (id) => {
   show(elem);
 };
 
-const showDiv = (id) => {
+const showElement = (id, scrollTo = false) => {
   const elem = document.getElementById(id);
-
   show(elem);
+
+  if (scrollTo) {
+    setTimeout(function () {
+      elem.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
 };
 
-const hideDiv = (id) => {
-    const elem = document.getElementById(id);
-  
-    if (window.getComputedStyle(elem).display === "block") {
-      hide(elem);
-      return;
-    }
-  };
+const hideElement = (id) => {
+  const elem = document.getElementById(id);
+
+  if (window.getComputedStyle(elem).display === "block") {
+    hide(elem);
+    return;
+  }
+};
 
 // function
 
@@ -106,4 +113,3 @@ document.addEventListener(
   },
   false
 );
-
