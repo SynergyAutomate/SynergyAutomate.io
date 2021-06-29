@@ -995,7 +995,7 @@
                       </fieldset>
                     </div>
 
-                    <div id="q_act_on_behalf" class="au-form-group dis-none">
+                    <div id="q_act_on_behalf" class="au-form-group">
                       <p>
                         Do you want to authorise someone to act on your behalf?
                       </p>
@@ -1004,10 +1004,12 @@
                           class="au-control-input__input"
                           type="radio"
                           name="radio_authorise_someone"
-                          id="radio_authorise_someone_yes"
+                          id="radio_authorise_someone"
                           onclick=" showElement('q_migration_agent')"
                         />
-                        <label class="au-control-input__text" for="email_yes"
+                        <label
+                          class="au-control-input__text"
+                          for="radio_authorise_someone"
                           >Yes</label
                         >
                       </div>
@@ -1016,10 +1018,12 @@
                           class="au-control-input__input"
                           type="radio"
                           name="radio_authorise_someone"
-                          id="radio_authorise_someone+no"
+                          id="radio_authorise_someone_no"
                           onclick="hideElement('q_migration_agent')"
                         />
-                        <label class="au-control-input__text" for="email_no"
+                        <label
+                          class="au-control-input__text"
+                          for="radio_authorise_someone_no"
                           >No
                         </label>
                       </div>
@@ -1031,12 +1035,14 @@
                         <input
                           class="au-control-input__input"
                           type="radio"
-                          name="radio_email"
-                          id="email_yes"
+                          name="radio_migration_agent"
+                          id="radio_migration_agent_yes"
                           onclick=" showElement('q_authorise_someone'),
                                   showElement('q_migration_agent_yes')"
                         />
-                        <label class="au-control-input__text" for="email_yes"
+                        <label
+                          class="au-control-input__text"
+                          for="radio_migration_agent_yes"
                           >Yes</label
                         >
                       </div>
@@ -1044,19 +1050,24 @@
                         <input
                           class="au-control-input__input"
                           type="radio"
-                          name="radio_email"
-                          id="email_no"
+                          name="radio_migration_agent"
+                          id="radio_migration_agent_no"
                           onclick="showElement('q_authorise_someone'),
                                 showElement('q_authorise_someone'),
                                 hideElement('q_migration_agent_yes')"
                         />
-                        <label class="au-control-input__text" for="email_no"
+                        <label
+                          class="au-control-input__text"
+                          for="radio_migration_agent_no"
                           >No
                         </label>
                       </div>
                     </div>
 
-                    <div id="q_authorise_someone" class="dis-none">
+                    <div
+                      id="q_authorise_someone"
+                      class="au-form-group dis-none"
+                    >
                       <div
                         id="q_migration_agent_yes"
                         class="au-form-groupdis-none"
@@ -1072,30 +1083,28 @@
                         />
                       </div>
 
-                      <div id="q_foi_2_yes" class="au-form-group dis-none">
-                        <div class="au-form-group">
-                          <label for="other_given_name_2" class="au-label"
-                            >Given name</label
-                          >
+                      <div class="au-form-group">
+                        <label for="other_given_name_2" class="au-label"
+                          >Given name</label
+                        >
 
-                          <input
-                            class="au-text-input au-text-input--width-lg"
-                            name="First name"
-                            id="other_given_name_2"
-                            type="text"
-                          />
-                        </div>
-                        <div class="au-form-group">
-                          <label for="other_family_name_2" class="au-label"
-                            >Family name</label
-                          >
-                          <input
-                            class="au-text-input au-text-input--width-lg"
-                            name="Last name"
-                            id="other_family_name_2"
-                            type="text"
-                          />
-                        </div>
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="First name"
+                          id="other_given_name_2"
+                          type="text"
+                        />
+                      </div>
+                      <div class="au-form-group">
+                        <label for="other_family_name_2" class="au-label"
+                          >Family name</label
+                        >
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="Last name"
+                          id="other_family_name_2"
+                          type="text"
+                        />
                       </div>
 
                       <div id="" class="au-form-group">
