@@ -87,59 +87,81 @@
             <div class="col-xs-8">
               <fieldset class="au-fieldset">
                 <legend class="au-fieldset__legend">
-                  <h1 class="au-display-xxl">Freedom of Information Requests</h1>
+                  <h1 class="au-display-xxl">
+                    Freedom of Information Requests
+                  </h1>
 
                   <section class="au-callout">
                     <h2 class="au-callout__heading">
                       Before you send a request
                     </h2>
-                     <p>
-                     Please note that FOI cannot provide personal advice, explanations in relation to departmental matters or progress reports on 
-                      applications that are in process.
+                    <p>
+                      Please note that FOI <strong>cannot</strong> provide
+                      personal advice, explanations in relation to departmental
+                      matters or progress reports on applications that are in
+                      process.
                     </p>
 
-                    <p>You do not need to make an FOI request if you only want copies of your own evidence or certificates as there are alternative 
-                      (and quicker) ways to access this information.</p>
+                    <p>
+                      You do not need to make an FOI request if you only want
+                      copies of your own evidence or certificates as there are
+                      alternative (and quicker) ways to access this information.
+                    </p>
                     <ul>
-                       <li>Visa or Citizenship information</li>
+                      <li>Visa or Citizenship information</li>
                       <li>[will list a summary of all types of not-foi]</li>
                     </ul>
 
-                    <p>Please make sure you have the following details ready before you start:
+                    <p>
+                      Please make sure you have the following details ready
+                      before you start:
                     </p>
-                      <ul>
-                        <li>Document reference numbers</li>
-                        <li>[see list of ‘scope’ information’]</li>
-                      </ul>
-                    </p>
+                    <ul>
+                      <li>Document reference numbers</li>
+                      <li>[see list of ‘scope’ information’]</li>
+                    </ul>
                   </section>
-                <section class="au-callout">
+                  <section class="au-callout">
                     <h2 class="au-callout__heading">
                       When you submit your request
                     </h2>
-                     <p>
-                     Please tell us which documents or information you are seeking.  Be as specific as possible to help us quickly 
-                       locate your documents or information.  Please note that FOI cannot provide personal advice, explanations in 
-                       relation to departmental matters or progress reports on applications that are in process.
-                  </p>
-                  <p>For more information about how we use your request, please see our Privacy Statement</p>
+                    <p>
+                      Please tell us which documents or information you are
+                      seeking. Be as specific as possible to help us quickly
+                      locate your documents or information. Please note that FOI
+                      cannot provide personal advice, explanations in relation
+                      to departmental matters or progress reports on
+                      applications that are in process.
+                    </p>
+                    <p>
+                      For more information about how we use your request, please
+                      see our Privacy Statement
+                    </p>
                   </section>
                 </legend>
+
                 <!-- 1.-->
                 <div class="au-form-group">
-                  <h3 class="au-display-xxl">
-                    I am requesting information on behalf of
-                  </h3>
+                  <h3 class="au-display-xxl">Start the request process</h3>
+                  <p>
+                    Do you want to have someone
+                    <strong>act on your behalf</strong>?
+                  </p>
 
                   <div class="au-control-input au-control-input--block">
                     <input
                       class="au-control-input__input"
                       type="radio"
                       name="radio_1"
-                      id="1_a"
+                      id="1_yes"
+                      onclick="showElement('q_1_yes'),
+                              showElement('q_3'),
+                              hideElement('q_2'),
+                              consent('given', true),
+                              showElement('q_act_on_behalf');"
                     />
-                    <label class="au-control-input__text" for="1_a"
-                      >Myself</label
+                    <label class="au-control-input__text" for="1_yes"
+                      >Yes</label
                     >
                   </div>
                   <div class="au-control-input au-control-input--block">
@@ -147,69 +169,46 @@
                       class="au-control-input__input"
                       type="radio"
                       name="radio_1"
-                      id="1_b"
+                      id="1_no"
+                      onclick="showElement('q_2'), 
+                              hideElement('q_1_yes'),
+                              hideElement('q_3'),
+                              consent('given', false)"
                     />
-                    <label class="au-control-input__text" for="1_b"
-                      >Someone else
-                    </label>
+                    <label class="au-control-input__text" for="1_no">No </label>
                   </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_1"
-                      id="1_c"
-                    />
-                    <label class="au-control-input__text" for="1_c">
-                      An organisation
-                    </label>
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_1"
-                      id="1_d"
-                    />
-                    <label class="au-control-input__text" for="1_d"
-                      >A migration agent
-                    </label>
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_1"
-                      id="1_e"
-                    />
-                    <label class="au-control-input__text" for="1_e"
-                      >Another Government organisation
-                    </label>
-                  </div>
+                </div>
+
+                <!-- 1 yes -->
+                <div id="q_1_yes" class="au-form-group dis-none">
+                  <p>Message to have forms ready to prove consent to act</p>
+                  <ul>
+                    <li>doc 1</li>
+                    <li>doc 1</li>
+                  </ul>
                 </div>
 
                 <!-- 2.-->
-                <div class="au-form-group">
-                  <h3 class="au-display-xxl">
-                    I am requesting information about
-                  </h3>
+                <div id="q_2" class="au-form-group dis-none">
+                  <p>
+                    Do you have consent to <strong>access</strong> documents or
+                    details <strong>about someone else</strong> ?
+                  </p>
 
                   <div class="au-control-input au-control-input--block">
                     <input
                       class="au-control-input__input"
                       type="radio"
                       name="radio_2"
-                      id="2_a"
+                      id="2_yes"
                     />
                     <label
                       class="au-control-input__text"
-                      for="2_a"
-                      onclick="showElement('q_3'), 
-                                hideElement('q_4'), 
-                                hideElement('q_consent_form'),
-                                hideElement('q_personal_list'),  
-                                hideElement('q_foi_form')"
-                      >Myself</label
+                      for="2_yes"
+                      onclick="showElement('q_2_yes'),  
+                                showElement('q_3'),
+                                consent('taken', true)"
+                      >Yes</label
                     >
                   </div>
                   <div class="au-control-input au-control-input--block">
@@ -217,63 +216,31 @@
                       class="au-control-input__input"
                       type="radio"
                       name="radio_2"
-                      id="2_b"
-                      onclick="showElement('q_4'),  
-                                hideElement('q_3'), 
-                                hideElement('q_consent_form'),
-                                hideElement('q_personal_list'), 
-                                hideElement('q_foi_form')"
+                      id="2_no"
+                      onclick="showElement('q_3'),  
+                                hideElement('q_2_yes'),
+                                consent('taken', false)"
                     />
-                    <label class="au-control-input__text" for="2_b"
-                      >Someone else
-                    </label>
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_2"
-                      id="2_c"
-                      onclick="showElement('q_foi_form'), 
-                                hideElement('q_consent_form'),
-                                hideElement('q_personal_list'),
-                                hideElement('q_3'), 
-                                hideElement('q_4')"
-                    />
-                    <label class="au-control-input__text" for="2_c">
-                      The Department of Home Affairs
-                    </label>
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_2"
-                      id="2_d"
-                      onclick="hideElement('q_3'),
-                                hideElement('q_4'),
-                                hideElement('q_consent_form'),
-                                hideElement('q_personal_list'), 
-                                hideElement('q_foi_form')"
-                    />
-                    <label class="au-control-input__text" for="2_d">
-                      Another Government organisation
-                    </label>
+                    <label class="au-control-input__text" for="2_no">No </label>
                   </div>
                 </div>
 
-                <br /><br />
+                <!-- 2 yes -->
+                <div id="q_2_yes" class="au-form-group dis-none">
+                  <p>Message to have forms ready to prove consent to act</p>
+                  <ul>
+                    <li>doc 1</li>
+                    <li>doc 1</li>
+                  </ul>
+                </div>
+
                 <!-- 3 -->
                 <div id="q_3" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">
-                    What information are you wanting to access about YOURSELF?
-                  </h3>
-
-                  <h3 class="au-display-xxl">Visa and Citizenship requests:</h3>
                   <p>
-                    Do you want to <strong>access</strong> documents or details <strong>you provided to
-                    the Department</strong>?
+                    Do you want to <strong>access </strong> documents or details
+                    <strong> provided to the Department</strong>?
                   </p>
+
                   <div class="au-control-input au-control-input--block">
                     <input
                       class="au-control-input__input"
@@ -352,13 +319,30 @@
                           Status</a
                         >
                       </li>
+                      <li>
+                        If you’d like to request access to your personal records
+                        in order to prepare your application for a subsequent
+                        Temporary Protection visa (TPV) or Safe Haven Enterprise
+                        visa (SHEV), please complete the Admin Release form.
+                      </li>
+                      <li>
+                        If you’d like a copy of your
+                        <strong>visa documentation</strong> to share with a new
+                        migration agent, please
+                        <strong> contact your previous migration agent </strong>
+                        as Migration Agents must retain documents/records for 7
+                        years and provide a copy of the documentation to you
+                        within 7 days (refer to the Migration Agents
+                        Requirements Act).
+                      </li>
                     </ol>
                   </div>
                   <div id="q_3_a_no" class="au-form-group dis-none">
                     <p>
-                      Do you want to <strong>access</strong> documents or details 
-                      <strong>owned by the Department</strong>?
+                      Do you want to <strong>access</strong> documents or
+                      details <strong>owned by the Department</strong>?
                     </p>
+
                     <div class="au-control-input au-control-input--block">
                       <input
                         class="au-control-input__input"
@@ -456,8 +440,8 @@
 
                     <div id="q_3_b_no" class="au-form-group dis-none">
                       <p>
-                        Do you want to <strong>update</strong> your documents or details <strong>owned 
-                        by the Department</strong>?
+                        Do you want to <strong>update</strong> documents or
+                        details <strong>owned by the Department</strong>?
                       </p>
                       <div class="au-control-input au-control-input--block">
                         <input
@@ -499,589 +483,832 @@
                           page of the website.
                         </p>
                       </div>
+
+                      <!-- validate foi -->
                       <div id="q_3_c_no" class="au-form-group dis-none">
+                        <h3>
+                          Do you want to make a Freedom of Information request?
+                        </h3>
                         <p>
-                          If you think the information the Department owns about
-                          you is:
-                        </p>
-                        <ul>
-                          <li>
-                            is incomplete, incorrect, out of date or misleading
-                          </li>
-                          <li>
-                            has been, is being, or is available to be used for
-                            an administrative purpose
-                          </li>
-                        </ul>
-                        <p>
-                          please complete the
-                          <a
-                            onclick="showElement('q_foi_form', true)"
-                            href="javascript:;"
-                            >FOI request form</a
+                          In the first instance refer to the <a
+                            href="https://www.homeaffairs.gov.au/access-and-accountability/freedom-of-information"
+                            >Freedom of Information</a
                           >
+                          page on the website for information on making a
+                          request. 
                         </p>
+
+                        <div class="au-form-group">
+                          <!-- valid 1 -->
+                          <div class="au-control-input">
+                            <input
+                              class="au-control-input__input"
+                              type="radio"
+                              name="radio_foi_valid"
+                              id="radio_foi_valid_1"
+                              onchange="showElement('q_foi_form');"
+                            />
+                            <label
+                              class="au-control-input__text"
+                              for="radio_foi_valid_1"
+                            >
+                              Do you think the information the Department owns
+                              about you:
+                              <ul>
+                                <li>
+                                  is incomplete, incorrect, out of date or
+                                  misleading?
+                                </li>
+                                <li>
+                                  has been, is being, or is available to be used
+                                  for an administrative purpose?
+                                </li>
+                              </ul>
+                            </label>
+                          </div>
+
+                          <!-- valid 2 -->
+                          <div class="au-control-input">
+                            <input
+                              class="au-control-input__input"
+                              type="radio"
+                              name="radio_foi_valid"
+                              id="radio_foi_valid_2"
+                              onchange="showElement('q_foi_form');"
+                            />
+                            <label
+                              class="au-control-input__text"
+                              for="radio_foi_valid_2"
+                            >
+                              If you’d like an overview of all an applicant’s
+                              <strong> visa application history</strong>,
+                              including the most recent visa milestone for each
+                              application, medical records and the relevant
+                              dates
+                              <!-- <img
+                                src="https://www.fillmurray.com/500/305"
+                                alt=""
+                              /> -->
+                            </label>
+                          </div>
+
+                          <!-- valid 3 -->
+                          <div class="au-control-input">
+                            <input
+                              class="au-control-input__input"
+                              type="radio"
+                              name="radio_foi_valid"
+                              id="radio_foi_valid_3"
+                              onchange="showElement('q_foi_form'),
+                                        toggleElement('q_access_department');"
+                            />
+                            <label
+                              class="au-control-input__text"
+                              for="radio_foi_valid_3"
+                            >
+                              If you’d like to access to documents about the
+                              Department or the Minister’s office, such as
+                              briefs, process documents, statistics relating to
+                              visa programs, and emails between areas. This may
+                              also include requests in relation to the
+                              Department’s policies, procedures, the
+                              import/export of goods, the Tourist Refund Scheme
+                              (TRS) and the Tariff Classification and Concession
+                              scheme.
+                            </label>
+                            <!-- TODO:: solve this formatting issue -->
+                            <!-- <div
+                              id="q_access_department"
+                              class="au-form-group dis-none"
+                            >
+                              Is the information more than 20 years old?
+                              <div
+                                class="au-control-input au-control-input--block"
+                              >
+                                <input
+                                  class="au-control-input__input"
+                                  type="radio"
+                                  name="radio_access_age"
+                                  id="radio_access_age_yes"
+                                />
+                                <label
+                                  class="au-control-input__text"
+                                  for="foi_org_yes"
+                                >
+                                  Yes
+                                </label>
+                              </div>
+                              <div
+                                class="au-control-input au-control-input--block"
+                              >
+                                <input
+                                  class="au-control-input__input"
+                                  type="radio"
+                                  name="radio_access_age"
+                                  id="radio_access_age_no"
+                                />
+                                <label
+                                  class="au-control-input__text"
+                                  for="foi_org_no"
+                                >
+                                  No
+                                </label>
+                              </div>
+
+                              <div
+                                id="q_access_age"
+                                class="au-form-group dis-none"
+                              >
+                                Visit the
+                                <a
+                                  href="https://www.naa.gov.au/help-your-research/ask-us-%20about-collection"
+                                  >National Archives of Australia ‘ask a
+                                  question’ website</a
+                                >
+                                <br />
+                                [i] Documents considered to be in the ‘open
+                                access’ period under the Archives Act 1983 may
+                                be held by the National Archives of Australia.
+                              </div>
+                            </div> -->
+                          </div>
+
+                          <!-- valid 4 -->
+                          <div class="au-control-input">
+                            <input
+                              class="au-control-input__input"
+                              type="radio"
+                              name="radio_foi_valid"
+                              id="radio_foi_valid_4"
+                              onchange="showElement('q_foi_form')"
+                            />
+                            <label
+                              class="au-control-input__text"
+                              for="radio_foi_valid_4"
+                            >
+                              If you’d like to access to documents the
+                              Department has about you (as a person of interest)
+                            </label>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <!-- 4 -->
-                <div id="q_4" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">
-                    What information are you wanting to access about SOMEONE
-                    ELSE?
-                  </h3>
-
-                  <p>Do you have consent to act on someone else’s behalf?</p>
-
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_4"
-                      id="4_a"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="4_a"
-                      onclick="showElement('q_personal_list'), hideElement('q_consent_form')"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_4"
-                      id="4_b"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="4_b"
-                      onclick="showElement('q_consent_form') , hideElement('q_personal_list')"
-                      >No</label
-                    >
-                  </div>
-                </div>
-
-                <!-- 5 -->
-                <div id="q_5" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">
-                    What information are you (on behalf of someone else) wanting
-                    to access about SOMEONE ELSE?
-                  </h3>
-
-                  <p>Do you have consent to act on someone else’s behalf?</p>
-
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_5"
-                      id="5_yes"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="5_yes"
-                      onclick="showElement('q_personal_list'), hideElement('q_consent_form')"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_5"
-                      id="5_no"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="5_no"
-                      onclick="showElement('q_consent_form') , hideElement('q_personal_list')"
-                      >No</label
-                    >
-                  </div>
-                </div>
-
-                <!-- Personal list -->
-                <div id="q_personal_list" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">Personal list</h3>
-                </div>
-
-                <!-- consent form  -->
-                <div id="q_consent_form" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">Complete the consent form</h3>
                 </div>
 
                 <!-- FOI form  -->
                 <div id="q_foi_form" class="au-form-group dis-none">
-                  <h3 class="au-callout__heading">FOI request form</h3>
+                  <p>
+                    Under section 15(2) of the Freedom of Information Act 1982,
+                    I am seeking access to the following document(s).
+                  </p>
+                  <h3 class="au-callout__heading">Applicant details</h3>
 
-                  <div class="au-form-group">
-                    <label for="name_first" class="au-label">Given name</label>
-                    <span
-                      class="au-error-text hide_content"
-                      id="name_first-error"
-                    ></span>
+                  <p>Are you representing a company or an organisation?</p>
+                  <div class="au-control-input au-control-input--block">
                     <input
-                      class="au-text-input au-text-input--width-lg"
-                      name="First name"
-                      id="name_first"
-                      type="text"
-                      aria-required="true"
-                      aria-describedby="full-name-error"
-                      autocomplete="name"
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_foi_org"
+                      id="foi_org_yes"
+                      onclick="showElement('q_foi_form_continue_1'), 
+                              showElement('q_foi_form_org')"
                     />
+                    <label class="au-control-input__text" for="foi_org_yes">
+                      Yes
+                    </label>
                   </div>
-                  <div class="au-form-group">
-                    <label for="name_last" class="au-label">Family name</label>
-                    <span
-                      class="au-error-text hide_content"
-                      id="name_last-error"
-                    ></span>
+                  <div class="au-control-input au-control-input--block">
                     <input
-                      class="au-text-input au-text-input--width-lg"
-                      name="Last name"
-                      id="name_last"
-                      type="text"
-                      aria-required="true"
-                      aria-describedby="full-name-error"
-                      autocomplete="name"
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_foi_org"
+                      id="foi_org_no"
+                      onclick="showElement('q_foi_form_continue_1'),
+                              hideElement('q_foi_form_org')"
                     />
+                    <label class="au-control-input__text" for="foi_org_no">
+                      No
+                    </label>
                   </div>
 
-                  <div class="au-form-group">
-                    <label for="email" class="au-label">Email address</label>
-                    <span
-                      class="au-error-text hide_content"
-                      id="email-error"
-                    ></span>
-                    <input
-                      class="au-text-input au-text-input--width-lg"
-                      name="Email"
-                      id="Email"
-                      type="text"
-                      aria-required="true"
-                      aria-describedby="email"
-                      autocomplete="email"
-                    />
-                  </div>
-                  <div class="au-form-group">
-                    <fieldset class="au-fieldset">
-                      <legend class="au-fieldset__legend">
-                        <h3 class="au-display-xxl">
-                          Tell us about the document(s) you're seeking
-                        </h3>
-                      </legend>
-
-                      <!-- irritable section for adding more than one doc -->
-                      <div>
-                        <legend><h4>Document 1</h4></legend>
-                        <label for="email" class="au-label"
-                          >Document reference number (if know)
-                        </label>
-
-                        <input
-                          class="au-text-input au-text-input--width-lg"
-                          name="Document reference number"
-                          id="name"
-                          type="text"
-                          aria-required="true"
-                          aria-describedby="email"
-                          autocomplete="email"
-                        />
-                        <label for="email" class="au-label"
-                          >Document Date (if know)</label
-                        >
-
-                        <input
-                          class="au-text-input au-text-input--width-lg"
-                          name="Document reference number"
-                          id="name"
-                          type="text"
-                          aria-required="true"
-                          aria-describedby="email"
-                          autocomplete="email"
-                        />
-
-                        <label for="email" class="au-label"
-                          >Clearly describe the document</label
-                        >
-
-                        <textarea
-                          class="au-text-input au-text-input--block"
-                          name="textarea"
-                          id="textarea"
-                        >
-                        </textarea>
-                      </div>
-                      <br />
-                      <a class="au-cta-link" href="javascript:;"
-                        >Add an additional document
-                        <em data-feather="plus-circle" class="icon"></em
-                      ></a>
-                    </fieldset>
-                  </div>
-
-                  <div class="au-form-group">
-                    <p>
-                      Would you like your FOI notification sent to you by email?
-                    </p>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_email"
-                        id="email_yes"
-                        onclick=" hideElement('postal')"
-                        checked
-                      />
-                      <label class="au-control-input__text" for="email_yes"
-                        >Yes</label
+                  <div
+                    id="q_foi_form_continue_1"
+                    class="au-form-group dis-none"
+                  >
+                    <div id="q_foi_form_org" class="au-form-group dis-none">
+                      <label for="organisation_name" class="au-label"
+                        >Organisation/Company name</label
                       >
-                    </div>
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_email"
-                        id="email_no"
-                        onclick="showElement('postal')"
-                      />
-                      <label class="au-control-input__text" for="email_no"
-                        >No
-                      </label>
-                    </div>
-                  </div>
-
-                  <div id="postal" class="au-form-group dis-none">
-                    <legend class="au-fieldset__legend">
-                      <h3 class="au-display-xxl">Postal address</h3>
-                    </legend>
-
-                    <div class="au-form-group au-form-group">
-                      <form id="form-box" method="get">
-                        <div class="form-header">Address Line 1</div>
-                        <input
-                          type="search"
-                          class="au-text-input au-text-input--block"
-                          id="addrs_1"
-                          placeholder="Search address here..."
-                        />
-
-                        <div class="form-header">Address Line 2</div>
-                        <input
-                          type="text"
-                          class="au-text-input au-text-input--block"
-                          id="addrs_2"
-                        />
-
-                        <div class="form-header">Suburb</div>
-                        <input
-                          type="text"
-                          class="au-text-input au-text-input--block"
-                          id="suburb"
-                        />
-
-                        <div class="form-header">State</div>
-                        <input
-                          class="au-text-input au-text-input--block"
-                          id="state"
-                        />
-
-                        <div class="form-header">Postcode</div>
-                        <input
-                          class="au-text-input au-text-input--block"
-                          id="postcode"
-                        />
-                      </form>
-                    </div>
-                  </div>
-
-                  <div class="au-form-group">
-                    <label for="your_location">Your location:</label>
-                    <select
-                      id="your_location"
-                      class="au-select au-select--block"
-                    >
-                      <option value="">Please select</option>
-                      <option value="ACT">Australian Capital Territory</option>
-                      <option value="NSW">New South Wales</option>
-                      <option value="NT ">Northern Territory</option>
-                      <option value="QLD">Queensland</option>
-                      <option value="SA ">South Australia</option>
-                      <option value="TAS">Tasmania</option>
-                      <option value="VIC">Victoria</option>
-                      <option value="WA">Western Australia</option>
-                      <option value="OS">Outside of Australia</option>
-                    </select>
-                  </div>
-
-                  <div class="au-form-group">
-                    <p>Have you been known by any other names?</p>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_foi_2"
-                        id="radio_foi_2_yes"
-                        onclick="showElement('q_foi_2_yes')"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="radio_foi_2_yes"
-                      >
-                        Yes
-                      </label>
-                    </div>
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_foi_2"
-                        id="radio_foi_2_no"
-                        onclick="hideElement('q_foi_2_yes')"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="radio_foi_2_no"
-                      >
-                        No
-                      </label>
-                    </div>
-                  </div>
-
-                  <div id="q_foi_2_yes" class="au-form-group dis-none">
-                    <div class="au-form-group">
-                      <label for="other_given_name" class="au-label"
-                        >Other given name</label
-                      >
-                      <span class="au-hint-text" id="other-given-name-hint">
-                        If you only have one name, enter your name in the Family
-                        Name field.</span
-                      >
-
                       <span
                         class="au-error-text hide_content"
-                        id="other_given_name-error"
+                        id="organisation_name-error"
+                      ></span>
+                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Organisation/Company name"
+                        id="organisation_name"
+                        type="text"
+                        aria-required="true"
+                        aria-describedby="organisation_name-error"
+                        autocomplete="organisation_name"
+                      />
+                    </div>
+                    <div class="au-form-group">
+                      <label for="name_first" class="au-label"
+                        >Given name</label
+                      >
+                      <span
+                        class="au-error-text hide_content"
+                        id="name_first-error"
                       ></span>
                       <input
                         class="au-text-input au-text-input--width-lg"
                         name="First name"
-                        id="other_given_name"
+                        id="name_first"
                         type="text"
                         aria-required="true"
-                        aria-describedby="other-given-name-error"
+                        aria-describedby="full-name-error"
                         autocomplete="name"
                       />
                     </div>
                     <div class="au-form-group">
-                      <label for="other_family_name" class="au-label"
-                        >Other family name</label
+                      <label for="name_last" class="au-label"
+                        >Family name</label
                       >
                       <span
                         class="au-error-text hide_content"
-                        id="other_family_name-error"
+                        id="name_last-error"
                       ></span>
                       <input
                         class="au-text-input au-text-input--width-lg"
                         name="Last name"
-                        id="other_family_name"
+                        id="name_last"
                         type="text"
                         aria-required="true"
-                        aria-describedby="other-family-name-error"
+                        aria-describedby="full-name-error"
                         autocomplete="name"
                       />
                     </div>
-                  </div>
 
-                  <div class="au-form-group">
-                    <label for="date_of_birth" class="au-label"
-                      >Date of birth</label
-                    >
-                    <span
-                      class="au-error-text hide_content"
-                      id="date_of_birth-error"
-                    ></span>
-                    <input
-                      class="au-text-input au-text-input--width-lg"
-                      name="Date of birth"
-                      id="date_of_birth"
-                      type="text"
-                      aria-required="true"
-                      aria-describedby="date-of-birth-error"
-                      autocomplete="name"
-                    />
-                  </div>
+                    <div class="au-form-group">
+                      <p>Have you been known by any other names?</p>
 
-                  <div class="au-form-group">
-                    <p>
-                      Do you have any of the following identification numbers?
-                      If so, enter your identification or reference number(s)
-                    </p>
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_boat_ID"
-                        id="checkbox_boat_ID"
-                        onchange="toggleElement('input_boat_ID');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_boat_ID"
-                        >Boat ID</label
-                      >
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_boat_ID"
-                        id="input_boat_ID"
-                        type="text"
-                      />
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_foi_2"
+                          id="radio_foi_2_yes"
+                          onclick="showElement('q_foi_2_yes'),
+                                  showElement('q_foi_form_continue_2')"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="radio_foi_2_yes"
+                        >
+                          Yes
+                        </label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_foi_2"
+                          id="radio_foi_2_no"
+                          onclick="hideElement('q_foi_2_yes'),
+                                  showElement('q_foi_form_continue_2')"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="radio_foi_2_no"
+                        >
+                          No
+                        </label>
+                      </div>
                     </div>
 
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_client_file"
-                        id="checkbox_client_file"
-                        onchange="toggleElement('input_client_file');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_client_file"
-                        >Client File reference</label
-                      >
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_client_file"
-                        id="input_client_file"
-                        type="text"
-                      />
-                    </div>
+                    <div id="q_foi_2_yes" class="au-form-group dis-none">
+                      <div class="au-form-group">
+                        <label for="other_given_name" class="au-label"
+                          >Other given name</label
+                        >
+                        <span class="au-hint-text" id="other-given-name-hint">
+                          If you only have one name, enter your name in the
+                          Family Name field.</span
+                        >
 
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_client_ID"
-                        id="checkbox_client_ID"
-                        onchange="toggleElement('input_client_ID');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_client_ID"
-                        >Client ID number
-                      </label>
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_client_ID"
-                        id="input_client_ID"
-                        type="text"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_passport"
-                        id="checkbox_passport"
-                        onchange="toggleElement('input_passport');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_passport"
-                        >Passport/travel document number
-                      </label>
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_passport"
-                        id="input_passport"
-                        type="text"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_permission_request"
-                        id="checkbox_permission_request"
-                        onchange="toggleElement('input_permission_request');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_permission_request"
-                        >Permission Request ID Number (PRID)
-                      </label>
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_permission_request"
-                        id="input_permission_request"
-                        type="text"
-                      />
-                    </div>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="checkbox"
-                        name="checkbox_transaction_reference"
-                        id="checkbox_transaction_reference"
-                        onchange="toggleElement('input_transaction_reference');"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="checkbox_transaction_reference"
-                        >Transaction Reference Number (TRN)
-                      </label>
-                      <input
-                        class="au-text-input dis-none"
-                        name="input_transaction_reference"
-                        id="input_transaction_reference"
-                        type="text"
-                      />
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="First name"
+                          id="other_given_name"
+                          type="text"
+                        />
+                      </div>
+                      <div class="au-form-group">
+                        <label for="other_family_name" class="au-label"
+                          >Other family name</label
+                        >
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="Last name"
+                          id="other_family_name"
+                          type="text"
+                        />
+                      </div>
                     </div>
                   </div>
-
-                  <div class="au-form-group">
-                    <p>Do you require an interpreter?</p>
-
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_foi_3"
-                        id="radio_foi_3_yes"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="radio_foi_3_yes"
+                  <div
+                    id="q_foi_form_continue_2"
+                    class="au-form-group dis-none"
+                  >
+                    <div class="au-form-group">
+                      <label for="date_of_birth" class="au-label"
+                        >Date of birth</label
                       >
-                        Yes
-                      </label>
+                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Date of birth"
+                        id="date_of_birth"
+                        type="text"
+                        aria-required="true"
+                        aria-describedby="date-of-birth-error"
+                        autocomplete="name"
+                      />
                     </div>
-                    <div class="au-control-input au-control-input--block">
-                      <input
-                        class="au-control-input__input"
-                        type="radio"
-                        name="radio_foi_3"
-                        id="radio_foi_3_no"
-                      />
-                      <label
-                        class="au-control-input__text"
-                        for="radio_foi_3_no"
-                      >
-                        No
-                      </label>
+
+                    <div class="au-form-group">
+                      <p>
+                        Would you like your FOI notification sent to you by
+                        email?
+                      </p>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_email"
+                          id="email_yes"
+                          onclick=" showElement('q_foi_form_continue_3'),
+                                    hideElement('q_postal'),
+                                    showElement('q_email')"
+                        />
+                        <label class="au-control-input__text" for="email_yes"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_email"
+                          id="email_no"
+                          onclick="showElement('q_foi_form_continue_3'),
+                                  showElement('q_postal'),
+                                  hideElement('q_email')"
+                        />
+                        <label class="au-control-input__text" for="email_no"
+                          >No
+                        </label>
+                      </div>
                     </div>
                   </div>
+                  <div
+                    id="q_foi_form_continue_3"
+                    class="au-form-group dis-none"
+                  >
+                    <div id="q_email" class="au-form-group dis-none">
+                      <label for="email" class="au-label">Email address</label>
+                      <span
+                        class="au-error-text hide_content"
+                        id="email-error"
+                      ></span>
+                      <input
+                        class="au-text-input au-text-input--width-lg"
+                        name="Email"
+                        id="Email"
+                        type="text"
+                        aria-required="true"
+                        aria-describedby="email"
+                        autocomplete="email"
+                      />
+                    </div>
 
+                    <div id="q_postal" class="au-form-group dis-none">
+                      <legend class="au-fieldset__legend">
+                        <h3 class="au-display-xxl">Postal address</h3>
+                      </legend>
+
+                      <div class="au-form-group au-form-group">
+                        <form id="form-box" method="get">
+                          <div class="form-header">Address Line 1</div>
+                          <input
+                            type="search"
+                            class="au-text-input au-text-input--block"
+                            id="addrs_1"
+                            placeholder="Search address here..."
+                          />
+
+                          <div class="form-header">Address Line 2</div>
+                          <input
+                            type="text"
+                            class="au-text-input au-text-input--block"
+                            id="addrs_2"
+                          />
+
+                          <div class="form-header">Suburb</div>
+                          <input
+                            type="text"
+                            class="au-text-input au-text-input--block"
+                            id="suburb"
+                          />
+
+                          <div class="form-header">State</div>
+                          <input
+                            class="au-text-input au-text-input--block"
+                            id="state"
+                          />
+
+                          <div class="form-header">Postcode</div>
+                          <input
+                            class="au-text-input au-text-input--block"
+                            id="postcode"
+                          />
+                        </form>
+                      </div>
+                    </div>
+
+                    <div class="au-form-group">
+                      <fieldset class="au-fieldset">
+                        <legend class="au-fieldset__legend">
+                          <h3 class="au-display-xxl">
+                            Tell us about the document(s) you're seeking
+                          </h3>
+                        </legend>
+
+                        <!-- irritable section for adding more than one doc -->
+                        <div>
+                          <legend><h4>Document 1</h4></legend>
+                          <label for="email" class="au-label"
+                            >Document reference number (if know)
+                          </label>
+
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Document reference number"
+                            id="name"
+                            type="text"
+                            aria-required="true"
+                            aria-describedby="email"
+                            autocomplete="email"
+                          />
+                          <label for="email" class="au-label"
+                            >Document Date (if know)</label
+                          >
+
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Document reference number"
+                            id="name"
+                            type="text"
+                            aria-required="true"
+                            aria-describedby="email"
+                            autocomplete="email"
+                          />
+
+                          <label for="email" class="au-label"
+                            >Clearly describe the document</label
+                          >
+
+                          <textarea
+                            class="au-text-input au-text-input--block"
+                            name="textarea"
+                            id="textarea"
+                          >
+                          </textarea>
+                        </div>
+                        <br />
+                        <a class="au-cta-link" href="javascript:;"
+                          >Add an additional document
+                          <em data-feather="plus-circle" class="icon"></em
+                        ></a>
+                      </fieldset>
+                    </div>
+
+                    <div id="q_act_on_behalf" class="au-form-group dis-none">
+                      <p>
+                        Do you want to authorise someone to act on your behalf?
+                      </p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_authorise_someone"
+                          id="radio_authorise_someone_yes"
+                          onclick=" showElement('q_migration_agent')"
+                        />
+                        <label class="au-control-input__text" for="email_yes"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_authorise_someone"
+                          id="radio_authorise_someone+no"
+                          onclick="hideElement('q_migration_agent')"
+                        />
+                        <label class="au-control-input__text" for="email_no"
+                          >No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div id="q_migration_agent" class="au-form-group dis-none">
+                      <p>Are they a Migration Agent?</p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_email"
+                          id="email_yes"
+                          onclick=" showElement('q_authorise_someone'),
+                                  showElement('q_migration_agent_yes')"
+                        />
+                        <label class="au-control-input__text" for="email_yes"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_email"
+                          id="email_no"
+                          onclick="showElement('q_authorise_someone'),
+                                showElement('q_authorise_someone'),
+                                hideElement('q_migration_agent_yes')"
+                        />
+                        <label class="au-control-input__text" for="email_no"
+                          >No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div id="q_authorise_someone" class="dis-none">
+                      <div
+                        id="q_migration_agent_yes"
+                        class="au-form-groupdis-none"
+                      >
+                        <label for="MARN" class="au-label"
+                          >Migration Agent Registration Number (MARN):
+                        </label>
+                        <input
+                          class="au-text-input au-text-input--width-lg"
+                          name="MARN"
+                          id="MARN"
+                          type="text"
+                        />
+                      </div>
+
+                      <div id="q_foi_2_yes" class="au-form-group dis-none">
+                        <div class="au-form-group">
+                          <label for="other_given_name_2" class="au-label"
+                            >Given name</label
+                          >
+
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="First name"
+                            id="other_given_name_2"
+                            type="text"
+                          />
+                        </div>
+                        <div class="au-form-group">
+                          <label for="other_family_name_2" class="au-label"
+                            >Family name</label
+                          >
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Last name"
+                            id="other_family_name_2"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+
+                      <div id="" class="au-form-group">
+                        <div class="au-form-group">
+                          <label for="date_of_birth_2" class="au-label"
+                            >Date of birth</label
+                          >
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Date of birth"
+                            id="date_of_birth_2"
+                            type="text"
+                            autocomplete="name"
+                          />
+                        </div>
+                      </div>
+
+                      <div id="" class="au-form-group">
+                        <div class="au-form-group">
+                          <label for="number_2" class="au-label"
+                            >Other person's contact number</label
+                          >
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Date of birth"
+                            id="number_2"
+                            type="text"
+                            autocomplete="name"
+                          />
+                        </div>
+                      </div>
+
+                      <div id="" class="au-form-group">
+                        <div class="au-form-group">
+                          <label for="email_2" class="au-label"
+                            >Other person's email address</label
+                          >
+                          <input
+                            class="au-text-input au-text-input--width-lg"
+                            name="Email of birth"
+                            id="email_2"
+                            type="text"
+                            autocomplete="name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="au-form-group">
+                      <p>
+                        Do you have any of the following identification numbers?
+                        If so, enter your identification or reference number(s)
+                      </p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_boat_ID"
+                          id="checkbox_boat_ID"
+                          onchange="toggleElement('input_boat_ID');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_boat_ID"
+                          >Boat ID</label
+                        >
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_boat_ID"
+                          id="input_boat_ID"
+                          type="text"
+                        />
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_client_file"
+                          id="checkbox_client_file"
+                          onchange="toggleElement('input_client_file');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_client_file"
+                          >Client File reference</label
+                        >
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_client_file"
+                          id="input_client_file"
+                          type="text"
+                        />
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_client_ID"
+                          id="checkbox_client_ID"
+                          onchange="toggleElement('input_client_ID');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_client_ID"
+                          >Client ID number
+                        </label>
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_client_ID"
+                          id="input_client_ID"
+                          type="text"
+                        />
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_passport"
+                          id="checkbox_passport"
+                          onchange="toggleElement('input_passport');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_passport"
+                          >Passport/travel document number
+                        </label>
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_passport"
+                          id="input_passport"
+                          type="text"
+                        />
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_permission_request"
+                          id="checkbox_permission_request"
+                          onchange="toggleElement('input_permission_request');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_permission_request"
+                          >Permission Request ID Number (PRID)
+                        </label>
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_permission_request"
+                          id="input_permission_request"
+                          type="text"
+                        />
+                      </div>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_transaction_reference"
+                          id="checkbox_transaction_reference"
+                          onchange="toggleElement('input_transaction_reference');"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="checkbox_transaction_reference"
+                          >Transaction Reference Number (TRN)
+                        </label>
+                        <input
+                          class="au-text-input dis-none"
+                          name="input_transaction_reference"
+                          id="input_transaction_reference"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="au-form-group">
+                      <p>Do you require an interpreter?</p>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_foi_3"
+                          id="radio_foi_3_yes"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="radio_foi_3_yes"
+                        >
+                          Yes
+                        </label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_foi_3"
+                          id="radio_foi_3_no"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="radio_foi_3_no"
+                        >
+                          No
+                        </label>
+                      </div>
+                    </div>
+                  </div>
                   <br /><br />
                   <button class="au-btn">Submit</button>
                 </div>
@@ -1100,12 +1327,6 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="au-footer__end">
-              <!-- <p>Footer text</p>
-              <img
-                class="au-responsive-media-img"
-                src="https://designsystem.gov.au/assets/img/placeholder/157X80.png"
-                alt="Placeholder image"
-              />-->
               <p>
                 <small
                   >&copy; Commonwealth of Australia,
@@ -1121,6 +1342,27 @@
         </div>
       </div>
     </footer>
+
+    <!-- <div class="au-form-group">
+                      <label for="your_location">Your location:</label>
+                      <select
+                        id="your_location"
+                        class="au-select au-select--block"
+                      >
+                        <option value="">Please select</option>
+                        <option value="ACT">
+                          Australian Capital Territory
+                        </option>
+                        <option value="NSW">New South Wales</option>
+                        <option value="NT ">Northern Territory</option>
+                        <option value="QLD">Queensland</option>
+                        <option value="SA ">South Australia</option>
+                        <option value="TAS">Tasmania</option>
+                        <option value="VIC">Victoria</option>
+                        <option value="WA">Western Australia</option>
+                        <option value="OS">Outside of Australia</option>
+                      </select>
+                    </div> -->
 
     <!-- Component javascript -->
     <script src="pancake/js/pancake.min.js"></script>

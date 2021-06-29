@@ -33,7 +33,6 @@
   document.addEventListener("DOMContentLoaded", downloadAddressFinder);
 })();
 
-
 var show = function (elem) {
   elem.style.display = "block";
 };
@@ -67,6 +66,7 @@ const toggleElement = (id) => {
 };
 
 const showElement = (id, scrollTo = false) => {
+console.log("🏄🏻‍♂️ ~ THIS", this);
   const elem = document.getElementById(id);
   show(elem);
 
@@ -88,7 +88,14 @@ const hideElement = (id) => {
   }
 };
 
-// function
+const consent = (type, access = true) => {
+  // const elem = document.getElementById(id);
+  if (type === "given") {
+    // show(elem);
+  } else if (type === "taken") {
+    // hide(elem);
+  }
+};
 
 // Listen for click events
 document.addEventListener(
