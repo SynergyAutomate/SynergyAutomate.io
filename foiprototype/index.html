@@ -91,6 +91,21 @@
                     Freedom of Information Requests
                   </h1>
 
+                  <!--
+  Light:  <section class="au-callout">
+  Dark:   <section class="au-callout au-callout--dark">
+-->
+                  <section class="au-callout">
+                    <h2 class="au-callout__heading">Title of the callout</h2>
+                    <p>
+                      Description of the callout Description of the callout
+                      Description of the callout Description of the callout
+                      Description of the callout Description of the callout
+                      Description of the callout Description of the callout
+                      Description of the callout
+                    </p>
+                  </section>
+
                   <section class="au-callout">
                     <h2 class="au-callout__heading">
                       Before you send a request
@@ -292,108 +307,8 @@
                   </section>
                 </legend>
 
-                <!-- 1.-->
-                <div class="au-form-group">
-                  <h3 class="au-display-xxl">Start the request process</h3>
-                  <p>
-                    Do you want to have someone
-                    <strong>act on your behalf</strong>?
-                  </p>
-
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_1"
-                      id="1_yes"
-                      onclick="showElement('q_1_yes'),
-                              showElement('q_3'),
-                              hideElement('q_2'),
-                              consent('given', true),
-                              showElement('q_migration_agent');"
-                    />
-                    <label class="au-control-input__text" for="1_yes"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_1"
-                      id="1_no"
-                      onclick="showElement('q_2'), 
-                              hideElement('q_1_yes'),
-                              hideElement('q_3'),
-                              hideElement('q_migration_agent'),
-                              consent('given', false)"
-                    />
-                    <label class="au-control-input__text" for="1_no">No </label>
-                  </div>
-                </div>
-
-                <!-- 1 yes -->
-                <div id="q_1_yes" class="au-form-group dis-none">
-                  <p>Message to have forms ready to prove consent to act</p>
-                  <ul>
-                    <li>doc 1</li>
-                    <li>doc 1</li>
-                  </ul>
-                </div>
-
-                <!-- 2.-->
-                <div id="q_2" class="au-form-group dis-none">
-                  <p>
-                    Do you have consent to <strong>access</strong> documents or
-                    details <strong>about someone else</strong> ?
-                  </p>
-
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_2"
-                      id="2_yes"
-                    />
-                    <label
-                      class="au-control-input__text"
-                      for="2_yes"
-                      onclick="showElement('q_2_yes'),  
-                                showElement('q_3'),
-                                showElement('q_consent_third_party'),
-                                consent('taken', true)"
-                      >Yes</label
-                    >
-                  </div>
-                  <div class="au-control-input au-control-input--block">
-                    <input
-                      class="au-control-input__input"
-                      type="radio"
-                      name="radio_2"
-                      id="2_no"
-                      onclick="showElement('q_3'),  
-                                hideElement('q_2_yes'),
-                                hideElement('q_consent_third_party'),
-                                consent('taken', false)"
-                    />
-                    <label class="au-control-input__text" for="2_no">No </label>
-                  </div>
-                </div>
-
-                <!-- 2 yes -->
-                <div id="q_2_yes" class="au-form-group dis-none">
-                  <p>
-                    Message to have forms ready to prove you have consent to
-                    access information
-                  </p>
-                  <ul>
-                    <li>doc 1</li>
-                    <li>doc 1</li>
-                  </ul>
-                </div>
-
                 <!-- 3 -->
-                <div id="q_3" class="au-form-group dis-none">
+                <div id="q_3" class="au-form-group">
                   <p>
                     Do you want to <strong>access </strong> documents or details
                     <strong> provided to the Department</strong>?
@@ -1284,6 +1199,112 @@
                       </fieldset>
                     </div>
 
+                    <!-- 1.-->
+                    <div class="au-form-group">
+                      <h3 class="au-display-xxl">Start the request process</h3>
+                      <p>
+                        Do you want to have someone
+                        <strong>act on your behalf</strong>?
+                      </p>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_1"
+                          id="1_yes"
+                          onclick="showElement('q_1_yes'),
+                              showElement('q_3'),
+                              hideElement('q_2'),
+                              consent('given', true),
+                              showElement('q_migration_agent');"
+                        />
+                        <label class="au-control-input__text" for="1_yes"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_1"
+                          id="1_no"
+                          onclick="showElement('q_2'), 
+                              hideElement('q_1_yes'),
+                              hideElement('q_3'),
+                              hideElement('q_migration_agent'),
+                              consent('given', false)"
+                        />
+                        <label class="au-control-input__text" for="1_no"
+                          >No
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- 1 yes -->
+                    <div id="q_1_yes" class="au-form-group dis-none">
+                      <p>Message to have forms ready to prove consent to act</p>
+                      <ul>
+                        <li>doc 1</li>
+                        <li>doc 1</li>
+                      </ul>
+                    </div>
+
+                    <!-- 2.-->
+                    <div id="q_2" class="au-form-group dis-none">
+                      <p>
+                        Do you have consent to <strong>access</strong> documents
+                        or details <strong>about someone else</strong> ?
+                      </p>
+
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_2"
+                          id="2_yes"
+                        />
+                        <label
+                          class="au-control-input__text"
+                          for="2_yes"
+                          onclick="showElement('q_2_yes'),  
+                                showElement('q_seeking_access_under_18');
+                                showElement('q_3'),
+                                showElement('q_consent_third_party'),
+                                consent('taken', true)"
+                          >Yes</label
+                        >
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_2"
+                          id="2_no"
+                          onclick="showElement('q_3'),  
+                                showElement('q_seeking_access_under_18');
+                                hideElement('q_2_yes'),
+                                hideElement('q_consent_third_party'),
+                                consent('taken', false)"
+                        />
+                        <label class="au-control-input__text" for="2_no"
+                          >No
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- 2 yes -->
+                    <div id="q_2_yes" class="au-form-group dis-none">
+                      <p>
+                        Message to have forms ready to prove you have consent to
+                        access information
+                      </p>
+                      <ul>
+                        <li>doc 1</li>
+                        <li>doc 1</li>
+                      </ul>
+                    </div>
+
                     <!-- migration agent  -->
                     <div id="q_migration_agent" class="au-form-group dis-none">
                       <p>Do you give consent to a Migration Agent?</p>
@@ -1295,6 +1316,7 @@
                           id="radio_migration_agent_yes"
                           onclick=" showElement('q_authorise_someone'),
                                   showElement('q_migration_agent_yes'),
+                                  showElement('q_seeking_access_under_18'),
                                   hideElement('q_migration_agent_no')"
                         />
                         <label
@@ -1310,8 +1332,9 @@
                           name="radio_migration_agent"
                           id="radio_migration_agent_no"
                           onclick="showElement('q_authorise_someone'),
-                                showElement('q_migration_agent_no'),
-                                hideElement('q_migration_agent_yes')"
+                                  showElement('q_seeking_access_under_18'),
+                                  showElement('q_migration_agent_no'),
+                                  hideElement('q_migration_agent_yes')"
                         />
                         <label
                           class="au-control-input__text"
@@ -1434,7 +1457,10 @@
                       <h3>details of third party</h3>
                     </div>
 
-                    <div class="au-form-group">
+                    <div
+                      id="q_seeking_access_under_18"
+                      class="au-form-group dis-none"
+                    >
                       Are you seeking to access document(s) of a child under 18
                       in your care (as a parent or guardian)?
                       <div class="au-control-input au-control-input--block">
@@ -1444,7 +1470,7 @@
                           name="radio_under_18"
                           id="radio_under_18_yes"
                           onclick=" showElement('q_under_18_yes'),
-                          showElement('q_foi_form_continue_4')
+                                  showElement('q_foi_form_continue_4')
                           
                           "
                         />
