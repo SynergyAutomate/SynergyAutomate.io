@@ -60,3 +60,7 @@ ul.af_list {
 .icon {
   margin-bottom: -6px;
 }
+
+.au-grid .container-fluid--no-padding div[class^="col-"] {
+  padding: 0 !important;
+}
