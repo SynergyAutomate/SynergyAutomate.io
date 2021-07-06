@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>
+  <html class="no-js lt-ie8 lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9 ie8" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+  <html class="no-js ie9" lang="en">
+<![endif]-->
+<!--[if !(IE)]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Prototype FOI</title>
+
+    <!-- Removes the no-js class on the <html> tag -->
+    <script type="text/javascript">
+      var $html = document.documentElement;
+      if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js");
+      else {
+        var className = "no-js";
+        ($html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ")),
+          ($html.className += " js");
+      }
+    </script>
+
+    <script type="module" src="main.js"></script>
+
+    <!-- HTML5 and media query support for IE8, we recommend inserting these inline -->
+    <!--[if lt IE 9]>
+      <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js"></script>
+      <script src="https://raw.githubusercontent.com/scottjehl/Respond/master/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Component styles -->
+    <link rel="stylesheet" href="pancake/css/pancake.min.css" />
+    <link rel="stylesheet" href="local.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+
+  <body class="au-grid is-components">
+    <header class="au-header au-header--dark" role="banner">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <a class="au-header__brand" href="#">
+              <img
+                class="au-header__brand-image"
+                alt="Insert alternate text here"
+                src="https://designsystem.gov.au/assets/img/header-logo-agov.png"
+              />
+              <div class="au-header__text">
+                <h1 class="au-header__heading">Freedom of Information</h1>
+                <div class="au-header__subline">Access to information</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--
+  Light:  <nav class="au-main-nav">
+  Dark:   <nav class="au-main-nav au-main-nav--dark">
+
+  Note: Main nav requires feature detection to see if a user has javascript.
+        Please add a `no-js` class on html and replace it with `js` if enabled
+        https://www.paulirish.com/2009/avoiding-the-fouc-v3/
+-->
+
+    <!-- An example component -->
+    <div class="au-body mb-20">
+      <main class="au-grid">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-8">
+              <h1 class="au-display-xxl">Landing page content</h1>
+              <div class="au-body">
+                <h2>Heading level 2</h2>
+                <p>Example paragraph. <a href="#">Internal link</a> and an <a href="#" rel="external">external link</a>.</p>
+                <hr />
+                <p>Lorem, Web Content Accessibility Guidelines (WCAG) ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                <a class="au-cta-link" href="intro.html">Make a Freedom Of Information request</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="au-footer au-body" role="contentinfo">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="au-footer__end">
+              <p>
+                <small
+                  >&copy; Commonwealth of Australia,
+                  <a href="https://github.com/govau/design-system-components/blob/master/LICENSE.md" rel="external license"
+                    >MIT licensed</a
+                  ></small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Component javascript -->
+    <script src="pancake/js/pancake.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

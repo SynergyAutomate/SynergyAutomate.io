@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>
+  <html class="no-js lt-ie8 lt-ie9" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+  <html class="no-js lt-ie9 ie8" lang="en">
+<![endif]-->
+<!--[if IE 9]>
+  <html class="no-js ie9" lang="en">
+<![endif]-->
+<!--[if !(IE)]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Prototype FOI</title>
+
+    <!-- Removes the no-js class on the <html> tag -->
+    <script type="text/javascript">
+      var $html = document.documentElement;
+      if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js");
+      else {
+        var className = "no-js";
+        ($html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ")),
+          ($html.className += " js");
+      }
+    </script>
+
+    <script type="module" src="main.js"></script>
+
+    <!-- HTML5 and media query support for IE8, we recommend inserting these inline -->
+    <!--[if lt IE 9]>
+      <script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js"></script>
+      <script src="https://raw.githubusercontent.com/scottjehl/Respond/master/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Component styles -->
+    <link rel="stylesheet" href="pancake/css/pancake.min.css" />
+    <link rel="stylesheet" href="local.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+
+  <body class="au-grid is-components">
+    <header class="au-header au-header--dark" role="banner">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9">
+            <a class="au-header__brand" href="#">
+              <img
+                class="au-header__brand-image"
+                alt="Insert alternate text here"
+                src="https://designsystem.gov.au/assets/img/header-logo-agov.png"
+              />
+              <div class="au-header__text">
+                <h1 class="au-header__heading">Freedom of Information</h1>
+                <div class="au-header__subline">Access to information</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--
+  Light:  <nav class="au-main-nav">
+  Dark:   <nav class="au-main-nav au-main-nav--dark">
+
+  Note: Main nav requires feature detection to see if a user has javascript.
+        Please add a `no-js` class on html and replace it with `js` if enabled
+        https://www.paulirish.com/2009/avoiding-the-fouc-v3/
+-->
+
+    <!-- An example component -->
+    <div class="au-body mb-20">
+      <main class="au-grid">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-8">
+              <fieldset class="au-fieldset">
+                <legend class="au-fieldset__legend">
+                  <h1 class="au-display-xxl">Freedom of Information Requests</h1>
+
+                  <!--
+  Light:  <section class="au-callout">
+  Dark:   <section class="au-callout au-callout--dark">
+-->
+
+                  <section class="au-callout">
+                    <h2 class="au-callout__heading">Before you send a request</h2>
+                    <p>
+                      Please note that FOI <strong>cannot</strong> provide personal advice, explanations in relation to departmental matters
+                      or progress reports on applications that are in process.
+                    </p>
+                    <h3 class="au-display-xxl">Documents and information available outside the FOI Act</h3>
+                    <p>
+                      You do not need to make an FOI request if you only want copies of your own evidence or certificates as there are
+                      alternative (and quicker) ways to access this information.
+                    </p>
+                    <ul>
+                      <li>Your personal visa and citizenship information and details are available on ImmiAccount immediately</li>
+                      <li>
+                        Visa Entitlement Verification Online system (VEVO) allows visa holders, employers, education providers and other
+                        organisations to check visa conditions
+                      </li>
+                    </ul>
+
+                    <p>
+                      The Department may hold information and documentation that has been provided by another authority or is publicly
+                      available elsewhere. Please use the correct channels that can provide what you are looking for quicker and easier to
+                      access your information.
+                    </p>
+
+                    <ul>
+                      <li>
+                        Members of the public requesting information about themselves that is
+                        <strong>owned by another Government department or agency</strong>, please visit the OIAC website.
+                      </li>
+                      <li>
+                        Members of the public requesting copies of personal documents generated by
+                        <strong>another issuing authority or agency</strong>
+                        (such as birth/marriage certificates or police clearances), please contact the original issuing authority or agency
+                        (could be in your specific state) to obtain an official copy of the source document.
+                      </li>
+                      <li>
+                        Members of the public requesting an update to a report they provided to
+                        <strong>another Australian authority or agency</strong>
+                        (such as an update to a police report), please contact the original issuing authority or agency (in your specific
+                        state) to update on the report.
+                      </li>
+                      <li>
+                        Previous clients of the Department requesting personal documentation provided by a 3rd party, please contact the 3rd
+                        party provider directly (eg IHMS for your health care records).
+                      </li>
+                      <li>
+                        Government departments (Federal, State or Territory) requesting copies of documents about clients of the Department
+                        of Home Affairs, please lodge a privacy request and quote the state legislation provision.
+                      </li>
+                      <li>
+                        Media requests such as statistics or information that is not a physical document already published on our website,
+                        please contact the Parliamentary liaison Unit (PLU) to release the information under Privacy Act.
+                      </li>
+                      <li>Departmental staff requests for copies of documentation, please contact the relevant departmental section.</li>
+                    </ul>
+                  </section>
+
+                  <section class="au-callout">
+                    <h2 class="au-callout__heading">When you submit your request</h2>
+                    <p>
+                      The ‘scope’ of the request is ensuring you are as specific as possible when describing the documents or information to
+                      help us quickly locate what you want to access, as it informs what system or area we need to go to for an answer.
+                      Specific files and documents are more likely to be in an electronic format and easier to access quickly, if the
+                      document type and reference numbers are provided.
+                    </p>
+                    <p>
+                      To assist the FOI Section in processing FOI requests quickly, we ask that you please consider how you word your
+                      request:
+                    </p>
+                    <ul>
+                      <li>provide a scope (refer to our examples) – we often receive requests that have no scope at all</li>
+                      <li>provide specific immigration history and which particular file/document is relevant in the first instance</li>
+                      <li>
+                        ensure that you provide specific details of the files that you are seeking to access – file numbers, date ranges,
+                        full names and correct date of birth.
+                      </li>
+                    </ul>
+
+                    <p>The more document information you share the better:</p>
+                    <ul>
+                      <li>Document reference numbers</li>
+                      <li>[see list of ‘scope’ information’]</li>
+                    </ul>
+
+                    <p>Avoid using non-specific language or broad terminology such as:</p>
+                    <ul>
+                      <li>“all visa files”</li>
+                      <li>“all documents relating to the applicant”</li>
+                      <li>“including but not limited to..”</li>
+                      <li>“other such documents”</li>
+                      <li>“and other relevant files”</li>
+                      <li>“Anything that appears on the system under my name and DOB”</li>
+                    </ul>
+                    <p>
+                      Sending a vague request with missing ‘scope’ may add a substantial delay to the finalisation of your FOI request. This
+                      is because the information may include paper files which may be stored across the country, and given the COVID-19
+                      pandemic, currently accessing hard copies of files can be difficult.
+                    </p>
+                  </section>
+
+                  <section class="au-callout">
+                    <h2 class="au-callout__heading">After you submit your request</h2>
+                    <p>Your request will be referred to the appropriate area for assessment.</p>
+                    <p>For more information about how we use your request, please see our Privacy Statement.</p>
+                    <h3 class="au-display-xxl">Processing Times</h3>
+
+                    <p>The Department will acknowledge receipt of an FOI access request within 14 calendar days of lodgement.</p>
+                    <p>
+                      The Department is required to give the client a decision about the request and the reasons for that decision within 30
+                      days of lodgement of the request.
+                    </p>
+                    <p>
+                      If the Department needs to consult with anyone else, we have a further 30 days to inform the client of the decision –
+                      for example, if the client asks for a document which contains information about a third party.
+                    </p>
+                    <p>
+                      If for any other reason the Department requires more than 30 days to complete the request, we will contact the client
+                      to arrange an extension of time up to 30 calendar days for processing the request.
+                    </p>
+                    <p>
+                      The Department might also apply to the Australian Information Commissioner for an extension of the processing time
+                      where exceptional circumstances would prevent us from processing the request in 30 days. The client will be informed
+                      in writing if the processing time has been extended.
+                    </p>
+                  </section>
+                </legend>
+
+                <!-- 3 -->
+                <div id="q_3" class="au-form-group">
+                  <p>Do you want to <strong>access </strong> documents or details <strong> provided to the Department</strong>?</p>
+
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_3_a"
+                      id="3_a_yes"
+                      onclick="showElement('q_3_a_yes'), hideElement('q_3_a_no')"
+                    />
+                    <label class="au-control-input__text" for="3_a_yes"> Yes </label>
+                  </div>
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_3_a"
+                      id="3_a_no"
+                      onclick="showElement('q_3_a_no'), hideElement('q_3_a_yes')"
+                    />
+                    <label class="au-control-input__text" for="3_a_no"> No </label>
+                  </div>
+
+                  <div id="q_3_a_yes" class="au-form-group" hidden>
+                    <ol>
+                      <li>
+                        ImmiAccount gives clients immediate access to e-lodged application forms, supporting documentation and departmental
+                        correspondence, such as grant letters.
+                        <ul>
+                          <li>
+                            If you'd like a copy of your
+                            <strong> visa or citizenship application</strong>
+                            for your own records or your original application was made through ImmiAccount, please login to your
+                            <a
+                              href="https://immi.homeaffairs.gov.au/ visas/permanent-resident/evidence-of-residency-status/ request-an-electronic-visa-record"
+                              >ImmiAccount</a
+                            >
+                          </li>
+                          <li>
+                            If you’d like to access your Document for Travel to Australia (DFTTA),
+                            <a href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/immicard/step-by-step">
+                              apply for an ImmiCard.</a
+                            >
+                          </li>
+                          <li>
+                            If you'd like a copy of your
+                            <strong> permanent residency visa or current visa status </strong>
+                            for your own records and are a long term resident who arrived in Australia before 1990 and have not left the
+                            country since your arrival,
+                            <a href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/immicard/step-by-step">
+                              apply for an ImmiCard.</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        If you'd like to request to cancel a
+                        <strong> Temporary Resident visa </strong> for you or your partner,
+                        <a href="https://immi.homeaffairs.gov.au/form-listing/forms/1194.pdf">
+                          please complete form 1194 Certification of Immigration Status</a
+                        >
+                      </li>
+                      <li>
+                        If you’d like to request access to your personal records in order to prepare your application for a subsequent
+                        Temporary Protection visa (TPV) or Safe Haven Enterprise visa (SHEV), please complete the Admin Release form.
+                      </li>
+                      <li>
+                        If you’d like a copy of your
+                        <strong>visa or citizenship documentation</strong> to share with a new migration agent, please
+                        <strong> contact your previous migration agent </strong>
+                        as Migration Agents must retain documents/records for 7 years and provide a copy of the documentation to you within
+                        7 days (refer to the Migration Agents Requirements Act).
+                      </li>
+                    </ol>
+                  </div>
+                  <div id="q_3_a_no" class="au-form-group" hidden>
+                    <p>Do you want to <strong>access</strong> documents or details <strong>owned by the Department</strong>?</p>
+
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_3_b"
+                        id="3_b_yes"
+                        onclick="showElement('q_3_b_yes'), hideElement('q_3_b_no')"
+                      />
+                      <label class="au-control-input__text" for="3_b_yes"> Yes </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_3_b"
+                        id="3_b_no"
+                        onclick="showElement('q_3_b_no'), hideElement('q_3_b_yes')"
+                      />
+                      <label class="au-control-input__text" for="3_b_no"> No </label>
+                    </div>
+
+                    <div id="q_3_b_yes" class="au-form-group" hidden>
+                      <ol>
+                        <li>
+                          If you’d like to request evidence of your
+                          <strong> current visa or citizenship status</strong>
+                          as proof of permanent residency, permission or visa status, or to apply for work or Medicare or to update details
+                          for a new request, visit
+                          <a
+                            href="https://immi.homeaffairs.gov.au/Pages/PageNotFoundError.aspx?requestUrl=https://immi.homeaffairs.gov.au/visas/already-%20have-a-visa/check-visa-details-and-conditions/check-%20conditions-online"
+                          >
+                            Visa Entitlement Verification Online (VEVO)</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your
+                          <strong> Australian Citizen Certificate </strong>for your own records,
+                          <a href="https://immi.homeaffairs.gov.au/form-listing/forms/119.pdf">
+                            please complete form 119 Application for evidence of Australian citizenship</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a
+                          <strong> visa grant number </strong>for your own records, you will need call the DATACOM staff and provide proof
+                          of your identity
+                          <!-- (what are the details?) -->
+                          .
+                        </li>
+                        <li>
+                          If you'd like to request evidence of a
+                          <strong> deceased person’s citizenship</strong> status for your own records,
+                          <a href="https://immi.homeaffairs.gov.au/form-listing/forms/1391.pdf">
+                            please complete form 1391 Request for confirmation of Australian citizenship status of a deceased person</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your
+                          <strong> International Movement information</strong>
+                          for your own records,
+                          <a href="https://immi.homeaffairs.gov.au/form-listing/forms/1359.pdf">
+                            please complete form 1359 Request for international movement records</a
+                          >.
+                        </li>
+                        <li>
+                          If you'd like to request a copy of your Certificate of Immigration Status as proof of
+                          <strong> Superannuation Status</strong>,
+                          <a href="https://immi.homeaffairs.gov.au/form-listing/forms/1194.pdf">
+                            please complete form 1194 Certification of Immigration Status</a
+                          >.
+                        </li>
+                      </ol>
+                    </div>
+
+                    <div id="q_3_b_no" class="au-form-group" hidden>
+                      <p>Do you want to <strong>update</strong> documents or details <strong>owned by the Department</strong>?</p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_3_c"
+                          id="3_c_yes"
+                          onclick="showElement('q_3_c_yes'), hideElement('q_3_c_no')"
+                        />
+                        <label class="au-control-input__text" for="3_c_yes"> Yes </label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="radio"
+                          name="radio_3_c"
+                          id="3_c_no"
+                          onclick="showElement('q_3_c_no'), hideElement('q_3_c_yes')"
+                        />
+                        <label class="au-control-input__text" for="3_c_no"> No </label>
+                      </div>
+
+                      <div id="q_3_c_yes" class="au-form-group" hidden>
+                        <ol>
+                          <li>
+                            If you’d like to request an update be made to your contact details (address, passport name, contact details or
+                            gender or you wish to provide updated identity (marriage, birth certificate) or business documents to the
+                            Department, please refer to the
+                            <a href="https://immi.homeaffairs.gov.au/change-in-situation"> Changes in Situation</a>
+                            page of the website.
+                          </li>
+                          <li>
+                            If you think the information the Department owns about you is
+                            <ul>
+                              <li>is incomplete, incorrect, out of date or misleading</li>
+                              <li>has been, is being, or is available to be used for an administrative purpose,</li>
+                            </ul>
+                            <a href="https://immi.homeaffairs.gov.au/form-listing/forms/424c.pdf">
+                              Please complete form 424c Request for amendment or annotation to personal records</a
+                            >
+                          </li>
+                        </ol>
+                      </div>
+
+                      <!-- validate foi -->
+                      <div id="q_3_c_no" class="au-form-group" hidden>
+                        <div class="au-form-group">
+                          <div class="au-control-input">
+                            <p>
+                              If you’d like to access to documents about the Department or the Minister’s office, such as briefs, process
+                              documents, statistics relating to visa programs, and emails between areas. This may also include requests in
+                              relation to the Department’s policies, procedures, the import/export of goods, the Tourist Refund Scheme (TRS)
+                              and the Tariff Classification and Concession scheme.
+                            </p>
+
+                            <p>Is the information more than 20 years old?</p>
+                            <div class="au-control-input au-control-input--block">
+                              <input
+                                class="au-control-input__input"
+                                type="radio"
+                                name="radio_access_age"
+                                id="radio_access_age_yes"
+                                onclick="showElement('q_access_age'),
+                                        hideElement('q_foi_form'),
+                                        hideElement('q_foi_form_continue_1')"
+                              />
+                              <label class="au-control-input__text" for="radio_access_age_yes"> Yes </label>
+                            </div>
+                            <div class="au-control-input au-control-input--block">
+                              <input
+                                class="au-control-input__input"
+                                type="radio"
+                                name="radio_access_age"
+                                id="radio_access_age_no"
+                                onclick="showElement('q_foi_form'),
+                                          showElement('q_foi_form_continue_1'),
+                                          hideElement('q_access_age')"
+                              />
+                              <label class="au-control-input__text" for="radio_access_age_no"> No </label>
+                            </div>
+
+                            <div id="q_access_age" class="au-form-group" hidden>
+                              Visit the
+                              <a href="https://www.naa.gov.au/help-your-research/ask-us-%20about-collection"
+                                >National Archives of Australia ‘ask a question’ website</a
+                              >
+                              <ul>
+                                <li>
+                                  Documents considered to be in the ‘open access’ period under the Archives Act 1983 may be held by the
+                                  National Archives of Australia.
+                                </li>
+                              </ul>
+                            </div>
+
+                            <!-- <img
+                                src="https://www.fillmurray.com/500/305"
+                                alt=""
+                              /> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FOI form  -->
+                <div id="q_foi_form" class="au-form-group" hidden>
+                  <p>
+                    <a class="au-cta-link" href="form.html">Continue to the Freedom Of Information request form</a>
+                  </p>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="au-footer au-body" role="contentinfo">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="au-footer__end">
+              <p>
+                <small
+                  >&copy; Commonwealth of Australia,
+                  <a href="https://github.com/govau/design-system-components/blob/master/LICENSE.md" rel="external license"
+                    >MIT licensed</a
+                  ></small
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Component javascript -->
+    <script src="pancake/js/pancake.min.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
