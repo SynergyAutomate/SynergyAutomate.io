@@ -157,5 +157,8 @@
     "react": {
       "location": "pancake/react/"
     }
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
   }
 }

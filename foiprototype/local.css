@@ -159,3 +159,8 @@ ul.af_list {
   /* color: purple; */
   margin-top: 8px;
 }
+
+* + .au-progress-indicator,
+.au-body * + .au-progress-indicator {
+  margin-bottom: 1rem;
+}
