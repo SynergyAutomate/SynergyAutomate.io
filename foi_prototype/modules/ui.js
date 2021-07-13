@@ -43,19 +43,28 @@ export const toggleElement = (id) => {
   }
 };
 
-export const showElement = (id, scrollTo = false) => {
-  const elem = document.getElementById(id);
-  show(elem);
+export const showElement = (ids, scrollTo = false) => {
+  if (typeof ids === "object") {
+    ids.forEach((el) => {
+      show(document.getElementById(el));
+    });
+  } else if (typeof ids === "string") {
+    show(document.getElementById(ids));
+  }
 
   if (scrollTo) {
     scrollToTop(elem);
   }
 };
 
-export const hideElement = (id) => {
-  const elem = document.getElementById(id);
-
-  hide(elem);
+export const hideElement = (ids) => {
+  if (typeof ids === "object") {
+    ids.forEach((el) => {
+      hide(document.getElementById(el));
+    });
+  } else if (typeof ids === "string") {
+    hide(document.getElementById(ids));
+  }
 };
 
 export const saveSection = (id) => {
