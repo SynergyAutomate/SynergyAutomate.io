@@ -243,8 +243,7 @@
                         class="au-control-input__text"
                         for="2_yes"
                         onclick="hideElement('q_foi_form_continue_4'),  
-                                showElement('q_seeking_access_under_18'),
-                                showElement('q_foi_form_submit')"
+                                showElement(['q_seeking_access_under_18','q_foi_form_submit'])"
                         >Yes</label
                       >
                     </div>
@@ -254,9 +253,8 @@
                         type="radio"
                         name="radio_2"
                         id="2_no"
-                        onclick="showElement('q_foi_form_continue_4'),  
-                                hideElement('q_seeking_access_under_18'),
-                                showElement('q_foi_form_submit')"
+                        onclick="hideElement('q_seeking_access_under_18'),
+                                showElement(['q_foi_form_submit','q_foi_form_continue_4'])"
                       />
                       <label class="au-control-input__text" for="2_no">No </label>
                     </div>
@@ -271,11 +269,7 @@
                         type="radio"
                         name="radio_under_18"
                         id="radio_under_18_yes"
-                        onclick=" showElement('q_under_18_yes'),
-                                  showElement('q_foi_form_continue_4'),
-                                  showElement('q_foi_form_submit')
-                          
-                          "
+                        onclick=" showElement(['q_under_18_yes','q_foi_form_continue_4', 'q_foi_form_submit' ])"
                       />
                       <label class="au-control-input__text" for="radio_under_18_yes">Yes</label>
                     </div>
