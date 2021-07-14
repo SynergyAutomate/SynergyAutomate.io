@@ -89,10 +89,7 @@
                         type="radio"
                         name="radio_foi_org"
                         id="foi_org_yes"
-                        onclick="showElement('q_foi_form_continue_3_a_yes'),
-                                  showElement('q_foi_form_submit'),
-                                  hideElement('q_foi_form_continue_3_a_no'),
-                                  hideElement('q_foi_form_continue_3_a_yes_no')"
+                        onclick="showElement(['q_foi_form_continue_3_a_yes', 'q_foi_form_continue_3_a_yes', 'q_foi_form_continue_3_a_no'])"
                       />
                       <label class="au-control-input__text" for="foi_org_yes"> Yes </label>
                     </div>
@@ -138,7 +135,8 @@
                         type="radio"
                         name="radio_1"
                         id="1_yes"
-                        onclick="showElement('q_migration_agent');"
+                        onclick="showElement('q_migration_agent'),
+                               hideElement('q_2')"
                       />
                       <label class="au-control-input__text" for="1_yes">Yes</label>
                     </div>
@@ -195,6 +193,7 @@
 
                   <!-- q_migration_agent_no -->
                   <div id="q_migration_agent_no" class="au-form-group" hidden>
+                    <h3>Your representative contact details:</h3>
                     <div class="au-form-group">
                       <label for="other_given_name_2" class="au-label">Given name</label>
 
@@ -242,8 +241,8 @@
                       <label
                         class="au-control-input__text"
                         for="2_yes"
-                        onclick="hideElement('q_foi_form_continue_4'),  
-                                showElement(['q_seeking_access_under_18','q_foi_form_submit'])"
+                        onclick="hideElement(['q_foi_form_continue_4','q_foi_form_submit']),  
+                                showElement(['q_seeking_access_under_18'])"
                         >Yes</label
                       >
                     </div>
@@ -254,7 +253,7 @@
                         name="radio_2"
                         id="2_no"
                         onclick="hideElement('q_seeking_access_under_18'),
-                                showElement(['q_foi_form_submit','q_foi_form_continue_4'])"
+                                showElement(['q_foi_form_submit'])"
                       />
                       <label class="au-control-input__text" for="2_no">No </label>
                     </div>
@@ -545,7 +544,7 @@
                         <h2 class="au-display-xxl">Request details</h2>
                         <p>Under section 15(2) of the Freedom of Information Act 1982, I am seeking access to the following document(s).</p>
                       </legend>
-                      <section class="au-callout">
+                      <section class="au-callout mb-12">
                         <p>
                           Be as specific as possible when describing the documents or information to help us quickly locate what you want to
                           access:
