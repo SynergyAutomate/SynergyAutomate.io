@@ -1,4 +1,4 @@
-import {showElement, hideElement, saveSection, initSection, toggleElement } from 'modules/ui.js';
+import {showElement, hideElement, saveSection, initSection, toggleElement } from './modules/ui.js';
 
 window.showElement = showElement;
 window.hideElement = hideElement;
