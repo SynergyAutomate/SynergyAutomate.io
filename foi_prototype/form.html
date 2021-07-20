@@ -68,20 +68,218 @@
       <main class="au-grid">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8 content">
+            <div class="col-md-7 content">
               <fieldset class="au-fieldset">
                 <legend class="au-fieldset__legend">
                   <h1 class="au-display-xxl">Freedom of Information Request Form</h1>
                 </legend>
 
-                <p>Use this form to make:</p>
-<ul><li>a Freedom of Information (FOI) request to access documents held by the Department of Home Affairs, including documents about you</li>
-<li>a FOI request to change or annotate information about you, if it is incomplete, out of date, incorrect or misleading</li>
-                </ul>
-                
-                
+                <!-- <p>Use this form to make:</p>
+                <ul>
+                  <li>
+                    a Freedom of Information (FOI) request to access documents held by the Department of Home Affairs, including documents
+                    about you
+                  </li>
+                  <li>
+                    a FOI request to change or annotate information about you, if it is incomplete, out of date, incorrect or misleading
+                  </li>
+                </ul> -->
+
+                <!-- section_about -->
+                <div id="section_about">
+                  <div class="au-card au-card--centred au-body mb-12">
+                    <div class="au-body au-body--alt au-card__header">
+                      <h4>Use this form to make:</h4>
+                    </div>
+                    <div class="au-card__inner">
+                      A Freedom of Information (FOI) request to access documents held by the Department of Home Affairs, including documents
+                      about you
+                    </div>
+
+                    <div class="au-card__inner">
+                      <i> or</i>
+                    </div>
+
+                    <div class="au-card__inner">
+                      A FOI request to change or annotate information about you, if it is incomplete, out of date, incorrect or misleading
+                    </div>
+                  </div>
+
+                  <div class="au-form-group">
+                    <p>Do you want to amend your details?</p>
+                    <span class="au-hint-text">
+                      This applies if you think the information the Department owns about you is incomplete, incorrect, out of date or
+                      misleading and has been, is being, or is available to be used for an administrative purpose.
+                    </span>
+
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_a"
+                        id="radio_foi_0_a_yes"
+                        onclick="showElement(['about_0_yes', 'about_previous_request'])"
+                      />
+
+                      <label class="au-control-input__text" for="radio_foi_0_a_yes"> Yes </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_a"
+                        id="radio_foi_0_a_no"
+                        onclick="hideElement('about_0_yes'),
+                                showElement('about_previous_request')"
+                      />
+                      <label class="au-control-input__text" for="radio_foi_0_a_no"> No </label>
+                    </div>
+                  </div>
+                  <div id="about_0_yes" class="au-form-group" hidden>
+                    <legend>
+                      What are the reasons why you believe the records or information are incomplete, incorrect, out of date, or misleading?
+                    </legend>
+                    <textarea class="au-text-input au-text-input--block" name="description" id="description"> </textarea>
+                  </div>
+
+                  <div id="about_previous_request" class="au-form-group" hidden>
+                    <p>Do you want to follow up on a previous request?</p>
+
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_b"
+                        id="radio_foi_0_b_yes"
+                        onclick="showElement(['about_1_yes', 'about_legal_priority'])"
+                      />
+
+                      <label class="au-control-input__text" for="radio_foi_0_b_yes"> Yes </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_b"
+                        id="radio_foi_0_b_no"
+                        onclick="hideElement('about_1_yes'),
+                                showElement('about_legal_priority')"
+                      />
+                      <label class="au-control-input__text" for="radio_foi_0_b_no"> No </label>
+                    </div>
+                  </div>
+                  <div id="about_1_yes" class="au-form-group" hidden>
+                    <label for="organisation_name" class="au-label">Previous request reference number </label>
+                    <input
+                      class="au-text-input au-text-input--width-lg"
+                      name="request_reference"
+                      id="request_reference"
+                      type="text"
+                      aria-required="true"
+                      autocomplete="request_reference"
+                    />
+                  </div>
+
+                  <div id="about_legal_priority" class="au-form-group" hidden>
+                    <p>Is there a legal priority for the request?</p>
+
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_c"
+                        id="radio_foi_0_c_yes"
+                        onclick="showElement(['about_3_yes'])"
+                      />
+
+                      <label class="au-control-input__text" for="radio_foi_0_c_yes"> Yes </label>
+                    </div>
+                    <div class="au-control-input au-control-input--block">
+                      <input
+                        class="au-control-input__input"
+                        type="radio"
+                        name="radio_foi_0_c"
+                        id="radio_foi_0_c_no"
+                        onclick="hideElement('about_3_yes'),
+                                showElement('q_foi_form_submit_0')"
+                      />
+                      <label class="au-control-input__text" for="radio_foi_0_c_no"> No </label>
+                    </div>
+                  </div>
+                  <div id="about_3_yes" class="au-form-group" hidden>
+                    <div class="au-form-group">
+                      <p>Is the request related to a legal matter?</p>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_1"
+                          id="checkbox_consideration_1"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_1">Administrative Appeals Tribunal (AAT)</label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_2"
+                          id="checkbox_consideration_2"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_2">Court</label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_3"
+                          id="checkbox_consideration_3"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_3">Ministerial Intervention</label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_4"
+                          id="checkbox_consideration_4"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_4">Visa cancellation</label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_5"
+                          id="checkbox_consideration_5"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_5">Other urgent reasons</label>
+                      </div>
+                      <div class="au-control-input au-control-input--block">
+                        <input
+                          class="au-control-input__input"
+                          type="checkbox"
+                          name="checkbox_consideration_6"
+                          id="checkbox_consideration_6"
+                          onchange="showElement('q_foi_form_submit_0');"
+                        />
+                        <label class="au-control-input__text" for="checkbox_consideration_6">None of the above</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- q_foi_form_submit -->
+                  <div id="q_foi_form_submit_0" class="au-form-group" hidden>
+                    <button class="au-btn" onclick="saveSection('section_about'), initSection('section_consent')">Save and continue</button>
+                  </div>
+                </div>
+
                 <!-- section_consent -->
-                <div id="section_consent" class="mb-12">
+                <div id="section_consent" class="mb-12" hidden>
                   <div class="au-form-group mb-12"></div>
 
                   <div id="q_foi_form_continue_3_a" class="au-form-group">
@@ -134,8 +332,8 @@
                       Do you want to have someone
                       <strong>act on your behalf</strong>?
                     </p>
-                     <span class="au-hint-text">If you nominate a friend or migration agent to act on your behalf all notices about the 
-                       request will be sent to them.
+                    <span class="au-hint-text"
+                      >If you nominate a friend or migration agent to act on your behalf all notices about the request will be sent to them.
                     </span>
 
                     <div class="au-control-input au-control-input--block">
@@ -244,8 +442,9 @@
                   <!-- q_2 -->
                   <div id="q_2" class="au-form-group" hidden>
                     <p>Are you seeking access to document(s) of another person (the 'third party')?</p>
-                    <span class="au-hint-text">To provide another person’s information, you will need to provide evidence of your authority 
-                      to ask for their information. That person will be required to provide proof of identity (eg Passport or Driver’s license).
+                    <span class="au-hint-text"
+                      >To provide another person’s information, you will need to provide evidence of your authority to ask for their
+                      information. That person will be required to provide proof of identity (eg Passport or Driver’s license).
                     </span>
 
                     <div class="au-control-input au-control-input--block">
@@ -457,72 +656,6 @@
                     </div>
 
                     <div class="au-form-group">
-                      <p>Does the applicant have a matter under consideration at or with any courts, interventions or tribunals?</p>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_1"
-                          id="checkbox_consideration_1"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_1">Administrative Appeals Tribunal (AAT)</label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_2"
-                          id="checkbox_consideration_2"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_2">Court</label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_3"
-                          id="checkbox_consideration_3"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_3">Ministerial Intervention</label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_4"
-                          id="checkbox_consideration_4"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_4">Visa cancellation</label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_5"
-                          id="checkbox_consideration_5"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_5">Other urgent reasons</label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="checkbox"
-                          name="checkbox_consideration_6"
-                          id="checkbox_consideration_6"
-                          onchange="showElement('q_foi_form_continue_1_b');"
-                        />
-                        <label class="au-control-input__text" for="checkbox_consideration_6">None of the above</label>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- q_foi_form_continue_1_b -->
-                  <div id="q_foi_form_continue_1_b" class="au-form-group" hidden>
-                    <div class="au-form-group">
                       <label for="your_location">Your location:</label>
                       <select id="your_location" class="au-select au-select--block" onchange="showElement('q_foi_form_submit_1');">
                         <option value="">Please select</option>
@@ -557,8 +690,6 @@
                         <p>Under section 15(2) of the Freedom of Information Act 1982, I am seeking access to the following document(s).</p>
                       </legend>
                       <section class="au-callout mb-12">
-                        
-                        
                         <p>
                           Be as specific as possible when describing the documents or information to help us quickly locate what you want to
                           access:
@@ -763,6 +894,9 @@
                       </fieldset>
 
                       <p>Would you like your FOI notification sent to you by email?</p>
+                      <span class="au-hint-text"
+                        >The Department’s preferred method of communication is email and responses will be quicker if an email is provided.
+                      </span>
 
                       <div class="au-control-input au-control-input--block">
                         <input
@@ -846,13 +980,17 @@
                     <div id="q_foi_form_submit_2" class="au-form-group" hidden>
                       <button
                         class="au-btn"
-                        onclick="saveSection('section_request'), initSection('section_done'),
-                      setTimeout(function(){  AU.animate.Run({
-                        element: document.getElementById( 'animate-example-1' ),
-                        property: 'width',
-                        endSize: 'auto',
-                        speed: 500,
-                      }) }, 500);"
+                        onclick="saveSection('section_about'), 
+                                  saveSection('section_consent'), 
+                                  saveSection('section_applicant'), 
+                                  saveSection('section_request'), 
+                                  initSection('section_done'),
+                                setTimeout(function(){  AU.animate.Run({
+                                  element: document.getElementById( 'animate-example-1' ),
+                                  property: 'width',
+                                  endSize: 'auto',
+                                  speed: 500,
+                                }) }, 500);"
                       >
                         Submit FOI request
                       </button>
@@ -870,15 +1008,26 @@
             </div>
 
             <!-- progress indicator -->
-            <div class="col-md-4 col-dark content au-body au-body--dark">
+            <div class="col-md-3 col-md-offset-1 col-dark content au-body au-body--dark">
               <h3 class="au-display-sm component-status__title">Form progress</h3>
               <ul class="au-progress-indicator au-progress-indicator--dark">
                 <li>
                   <a
-                    id="progress_section_consent"
+                    id="progress_section_about"
                     class="au-progress-indicator__link au-progress-indicator__link--doing"
                     href="javascript:;"
-                    onclick="initSection('section_consent'), hideElement('section_request'), hideElement('section_applicant'), hideElement('section_done')"
+                    onclick="initSection('section_about'), hideElement('section_consent'), hideElement('section_request'), hideElement('section_applicant'), hideElement('section_done')"
+                  >
+                    <span class="au-progress-indicator__status">Doing</span>
+                    Type of request
+                  </a>
+                </li>
+                <li>
+                  <a
+                    id="progress_section_consent"
+                    class="au-progress-indicator__link au-progress-indicator__link--todo"
+                    href="javascript:;"
+                    onclick="initSection('section_consent'), hideElement('section_about'),  hideElement('section_request'), hideElement('section_applicant'), hideElement('section_done')"
                   >
                     <span class="au-progress-indicator__status">Doing</span>
                     Consent and third-party details
@@ -889,7 +1038,7 @@
                     id="progress_section_applicant"
                     class="au-progress-indicator__link au-progress-indicator__link--todo"
                     href="javascript:;"
-                    onclick="initSection('section_applicant'), hideElement('section_request'),  hideElement('section_consent'), hideElement('section_done')"
+                    onclick="initSection('section_applicant'),  hideElement('section_about'), hideElement('section_request'),  hideElement('section_consent'), hideElement('section_done')"
                   >
                     <span class="au-progress-indicator__status">To do</span>
                     Applicant details
@@ -900,7 +1049,7 @@
                     id="progress_section_request"
                     class="au-progress-indicator__link au-progress-indicator__link--todo"
                     href="javascript:;"
-                    onclick="initSection('section_request'), hideElement('section_applicant'), hideElement('section_consent'), hideElement('section_done')"
+                    onclick="initSection('section_request'),  hideElement('section_about'), hideElement('section_applicant'), hideElement('section_consent'), hideElement('section_done')"
                   >
                     <span class="au-progress-indicator__status">To do</span>
                     Request details

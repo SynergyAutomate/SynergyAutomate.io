@@ -15,6 +15,7 @@
     "@gov.au/form": "^0.1.6",
     "@gov.au/grid-12": "^2.1.1",
     "@gov.au/header": "^4.1.13",
+    "@gov.au/inpage-nav": "^3.0.7",
     "@gov.au/progress-indicator": "^3.1.8",
     "@gov.au/searchbox": "^0.2.3",
     "@gov.au/select": "^2.0.12",
