@@ -108,6 +108,17 @@ const scrollToTop = (elem = null) => {
   }, 50);
 };
 
+export const showChangedElement = (e) => {
+  const all = Array.apply(null, e.options);
+  all.forEach((el) => {
+    hide(document.getElementById(el.value));
+  });
+
+  setTimeout(() => {
+    show(document.getElementById(e.value));
+  }, 500);
+};
+
 // Listen for click events
 document.addEventListener(
   "click",

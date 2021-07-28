@@ -135,11 +135,80 @@
                   </div>
                 </div>
                 <div id="about_0_yes" class="au-form-group" hidden>
-                  <legend>
-                    What are the reasons why you believe the records or information are incomplete, incorrect, out of date, or misleading?
-                  </legend>
-                  <span class="au-hint-text">Note: Please attach proof of identity as specified on the information pages. </span>
-                  <textarea class="au-text-input au-text-input--block" name="description" id="description"> </textarea>
+                  <div class="au-form-group">
+                    <legend>Enter the reason why you want to amend details</legend>
+                    <textarea class="au-text-input au-text-input--block" name="description" id="description"> </textarea>
+                  </div>
+                  <div class="au-form-group">
+                    <main class="au-grid">
+                      <div class="container-fluid container-fluid--no-padding">
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <h3>Upload identity documents</h3>
+                            <span class="au-hint-text"
+                              >You will need to provide a certified copy of photographic identification such as a current passport or
+                              current drivers licence.
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <select id="document_1" class="au-select au-select--block">
+                              <option value="">Please select</option>
+                              <option value="passport">Passport/travel document</option>
+                              <option value="drivers">Drivers Licence</option>
+                              <option value="birth ">Birth certificate</option>
+                              <option value="statement">Supporting statement</option>
+                              <option value="other ">Other</option>
+                            </select>
+                          </div>
+                          <div class="col-xs-6">
+                            <form class="au-search">
+                              <label for="standard" class="au-search__label">Search this website</label>
+                              <input
+                                type="file"
+                                class="au-btn"
+                                id="choose_file"
+                                name="avatar"
+                                accept="image/png, image/jpeg, application/pdf"
+                              />
+                            </form>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <a class="" href="javascript:;">Add another document<em data-feather="plus-circle" class="icon"></em></a>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  </div>
+
+                  <div class="au-form-group">
+                    <label for="amend_document_details" class="au-label"> Enter departmental document details or information</label>
+                    <span class="au-hint-text"> Examples maybe ‘citizen certificate’, also provide file numbers if known </span>
+                    <textarea
+                      class="au-text-input au-text-input--block"
+                      name="amend_document_details"
+                      id="amend_document_details"
+                      type="text"
+                    >
+                    </textarea>
+                  </div>
+
+                  <div class="au-form-group">
+                    <h4>Enter the specific amendment that needs to be made</h4>
+
+                    <label for="amend_family_name" class="au-label">Family name </label>
+                    <input class="au-text-input au-text-input--width-lg" name="amend_family_name" id="amend_family_name" type="text" />
+
+                    <label for="amend_given_name" class="au-label"> Given names </label>
+                    <input class="au-text-input au-text-input--width-lg" name="amend_given_name" id="amend_given_name" type="text" />
+                    <label for="amend_dob" class="au-label">Date of birth </label>
+                    <input class="au-text-input au-text-input--width-lg" name="amend_dob" id="amend_dob" type="text" />
+                    <label for="amend_other" class="au-label">Other </label>
+                    <input class="au-text-input au-text-input--width-lg" name="amend_other" id="amend_other" type="text" />
+                  </div>
                 </div>
 
                 <div id="about_previous_request" class="au-form-group" hidden>
@@ -192,7 +261,8 @@
                       type="radio"
                       name="radio_foi_0_c"
                       id="radio_foi_0_c_yes"
-                      onclick="showElement(['about_3_yes'])"
+                      onclick="showElement(['about_3_yes']),
+                                hideElement('q_foi_form_submit_0')"
                     />
 
                     <label class="au-control-input__text" for="radio_foi_0_c_yes"> Yes </label>
@@ -204,7 +274,7 @@
                       name="radio_foi_0_c"
                       id="radio_foi_0_c_no"
                       onclick="hideElement('about_3_yes'),
-                                showElement('about_visa_application_history')"
+                                showElement('q_foi_form_submit_0')"
                     />
                     <label class="au-control-input__text" for="radio_foi_0_c_no"> No </label>
                   </div>
@@ -218,7 +288,7 @@
                         type="checkbox"
                         name="checkbox_consideration_1"
                         id="checkbox_consideration_1"
-                        onchange="showElement(['about_legal_priority_yes','about_visa_application_history']);"
+                        onchange="showElement(['about_legal_priority_yes','q_foi_form_submit_0']);"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_1">Administrative Appeals Tribunal (AAT)</label>
                     </div>
@@ -228,7 +298,7 @@
                         type="checkbox"
                         name="checkbox_consideration_2"
                         id="checkbox_consideration_2"
-                        onchange="showElement(['about_legal_priority_yes','about_visa_application_history']);"
+                        onchange="showElement(['about_legal_priority_yes','q_foi_form_submit_0']);"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_2">Court</label>
                     </div>
@@ -238,7 +308,7 @@
                         type="checkbox"
                         name="checkbox_consideration_3"
                         id="checkbox_consideration_3"
-                        onchange="showElement(['about_legal_priority_yes','about_visa_application_history']);"
+                        onchange="showElement(['about_legal_priority_yes','q_foi_form_submit_0']);"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_3">Ministerial Intervention</label>
                     </div>
@@ -248,7 +318,7 @@
                         type="checkbox"
                         name="checkbox_consideration_4"
                         id="checkbox_consideration_4"
-                        onchange="showElement(['about_legal_priority_yes','about_visa_application_history']);"
+                        onchange="showElement(['about_legal_priority_yes','q_foi_form_submit_0']);"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_4">Visa cancellation</label>
                     </div>
@@ -258,7 +328,7 @@
                         type="checkbox"
                         name="checkbox_consideration_5"
                         id="checkbox_consideration_5"
-                        onchange="showElement(['about_legal_priority_yes','about_visa_application_history']);"
+                        onchange="showElement(['about_legal_priority_yes','q_foi_form_submit_0']);"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_5">Other urgent reasons</label>
                     </div>
@@ -268,7 +338,7 @@
                         type="checkbox"
                         name="checkbox_consideration_6"
                         id="checkbox_consideration_6"
-                        onchange="showElement(['about_visa_application_history']),
+                        onchange="showElement(['q_foi_form_submit_0']),
                                       hideElement('about_legal_priority_yes')"
                       />
                       <label class="au-control-input__text" for="checkbox_consideration_6">None of the above</label>
@@ -278,12 +348,12 @@
 
                 <div id="about_legal_priority_yes" class="au-form-group" hidden>
                   <div class="au-form-group">
-                    <label for="date_required" class="au-label">Date you require information by Day Month Year </label>
+                    <label for="date_required" class="au-label">Date you require information </label>
                     <input class="au-text-input au-text-input--width-lg" name="date_required" id="date_required" type="text" />
                   </div>
                 </div>
 
-                <div id="about_visa_application_history" class="au-form-group" hidden>
+                <!-- <div id="about_visa_application_history" class="au-form-group" hidden>
                   <p>Are you seeking access to an overview of an applicant’s visa application history?</p>
                   <span class="au-hint-text">
                     This includes the most recent visa milestone for each application, medical records and the relevant dates. A screenshot
@@ -311,15 +381,7 @@
                     />
                     <label class="au-control-input__text" for="radio_foi_0_d_no"> No </label>
                   </div>
-                </div>
-
-                <div id="about_visa_application_history_yes" class="au-form-group" hidden>
-                  <p></p>
-                  <div class="au-control-input au-control-input--block">
-                    <input class="au-control-input__input" type="checkbox" name="checkbox_request_CSP" id="checkbox_request_CSP" />
-                    <label class="au-control-input__text" for="checkbox_request_CSP">Request a Client Search Portal (CSP) Screenshot</label>
-                  </div>
-                </div>
+                </div> -->
 
                 <!-- q_foi_form_submit -->
                 <div id="q_foi_form_submit_0" class="au-form-group" hidden>
@@ -522,7 +584,8 @@
                       type="radio"
                       name="radio_under_18"
                       id="radio_under_18_yes"
-                      onclick=" showElement(['q_under_18_yes','q_foi_form_continue_4', 'q_foi_form_submit' ])"
+                      onclick=" showElement(['q_under_18_yes', 'q_under_18_doc_yes', 'q_foi_form_continue_4', 'q_foi_form_submit' ]),
+                                hideElement(['q_under_18_no','q_under_18_doc_no' ])"
                     />
                     <label class="au-control-input__text" for="radio_under_18_yes">Yes</label>
                   </div>
@@ -533,23 +596,22 @@
                       name="radio_under_18"
                       id="radio_under_18_no"
                       onclick="
-                                hideElement('q_under_18_yes'),
-                                showElement('q_foi_form_continue_4'),
-                                showElement('q_foi_form_submit')"
+                                hideElement(['q_under_18_yes','q_under_18_doc_yes' ]),
+                                showElement(['q_foi_form_continue_4', 'q_foi_form_submit','q_under_18_no','q_under_18_doc_no'])"
                     />
                     <label class="au-control-input__text" for="radio_under_18_no">No </label>
                   </div>
                 </div>
 
-                <!-- q_under_18_yes -->
-                <div id="q_under_18_yes" class="au-form-group" hidden>
-                  <p>Upload child details</p>
-                </div>
-
                 <!-- q_foi_form_continue_4 -->
                 <div id="q_foi_form_continue_4" class="au-form-group" hidden>
                   <div class="au-form-group">
-                    <h3>Upload identity documents</h3>
+                    <div id="q_under_18_no" class="au-form-group" hidden>
+                      <h3>Upload third party's identity documents</h3>
+                    </div>
+                    <div id="q_under_18_yes" class="au-form-group" hidden>
+                      <h3>Upload child identity documents</h3>
+                    </div>
                     <p>
                       Make sure you have attached your identity documents and any supporting documentation before you submit this request.
                       If you have more than one document to add, select ‘+Add another document’.
@@ -580,11 +642,11 @@
                           </div>
                           <div class="col-xs-6">
                             <form class="au-search">
-                              <label for="standard" class="au-search__label">Search this website</label>
+                              <label for="upload_identity_documents" class="au-search__label">Upload identity documents</label>
                               <input
                                 type="file"
                                 class="au-btn"
-                                id="choose_file"
+                                id="upload_identity_documents"
                                 name="avatar"
                                 accept="image/png, image/jpeg, application/pdf"
                               />
@@ -592,8 +654,11 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col-xs-12">
+                          <div id="q_under_18_doc_no" class="col-xs-12" hidden>
                             <a class="" href="javascript:;">Add another document<em data-feather="plus-circle" class="icon"></em></a>
+                          </div>
+                          <div id="q_under_18_doc_yes" class="col-xs-12" hidden>
+                            <a class="" href="javascript:;">Add more children details<em data-feather="plus-circle" class="icon"></em></a>
                           </div>
                         </div>
                       </div>
@@ -721,6 +786,31 @@
                 </div>
 
                 <div id="q_foi_form_continue_2_a_1" class="au-form-group" hidden>
+                  <p>Do you require an interpreter?</p>
+
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_foi_3"
+                      id="radio_foi_3_yes"
+                      onclick=" showElement('q_foi_form_continue_2_a_2')"
+                    />
+                    <label class="au-control-input__text" for="radio_foi_3_yes"> Yes </label>
+                  </div>
+                  <div class="au-control-input au-control-input--block">
+                    <input
+                      class="au-control-input__input"
+                      type="radio"
+                      name="radio_foi_3"
+                      id="radio_foi_3_no"
+                      onclick=" showElement('q_foi_form_continue_2_a_2')"
+                    />
+                    <label class="au-control-input__text" for="radio_foi_3_no"> No </label>
+                  </div>
+                </div>
+
+                <div id="q_foi_form_continue_2_a_2" class="au-form-group" hidden>
                   <p>Would you like your FOI notification sent to you by email?</p>
                   <span class="au-hint-text"
                     >The Department’s preferred method of communication is email and responses will be quicker if an email is provided.
@@ -818,25 +908,12 @@
                     </legend>
                     <section class="au-callout mb-12">
                       <p>
-                        <strong>Be as specific as possible when describing the documents or information</strong> to help us quickly locate
-                        what you want to access:
-                      </p>
-
-                      <ul>
-                        <li>
-                          provide specific details of the files that you are seeking to access – file numbers, date ranges, full names and
-                          correct date of birth
-                        </li>
-                        <li>(refer to our examples)</li>
-                      </ul>
-
-                      <p>
                         Sending a vague request with missing ‘scope’ may add a substantial delay to the finalisation of your FOI request.
                         This is because the information may include paper files which may be stored across the country, and given the
                         COVID-19 pandemic, currently accessing hard copies of files can be difficult.
                       </p>
 
-                      <p>Avoid using non-specific language or broad terminology such as:</p>
+                      <p><strong>Avoid</strong> using non-specific language or broad terminology such as:</p>
                       <ul>
                         <li>“all visa files”</li>
                         <li>“all documents relating to the applicant”</li>
@@ -849,21 +926,24 @@
 
                     <h3>Under section 15(2) of the Freedom of Information Act 1982, I am seeking access to the following document(s).</h3>
 
-                    <label for="description">Provide details about the application type and reason for urgency:</label>
+                    <label for="description"
+                      >Enter as much specific information as possible when describing the documents or information</label
+                    >
 
                     <span class="au-hint-text"
                       >Be as specific as possible about what you want to access, such as ‘my birth certificate lodged with my partner visa’
-                      or ‘the file of my visitor visa that approved/refused in 2018’</span
-                    >
+                      or ‘the file of my visitor visa that approved/refused in 2018’. File numbers, date ranges, full names and correct date
+                      of birth will help us quickly locate what you want to access
+                    </span>
 
                     <textarea class="au-text-input au-text-input--block" name="description" id="description"> </textarea>
 
-                    <p>Do you have any of the following identification numbers? If so, enter your identification or reference number(s)</p>
+                    <p>Enter any departmental identification references</p>
 
                     <span class="au-hint-text"
                       >Specific files and documents are more likely to be in an electronic format and easier to access quickly, if the
-                      document type and reference numbers are provided.</span
-                    >
+                      document type and reference numbers are provided.
+                    </span>
                     <div class="au-control-input au-control-input--block">
                       <input
                         class="au-control-input__input"
@@ -950,7 +1030,7 @@
                   </div>
 
                   <div class="au-form-group">
-                    <label for="first_arrival" class="au-label">First arrival date Day Month Year </label>
+                    <label for="first_arrival" class="au-label">First arrival date </label>
                     <input class="au-text-input au-text-input--width-lg" name="first_arrival" id="first_arrival" type="text" />
                   </div>
 
@@ -974,76 +1054,84 @@
                     />
                   </div>
 
-                  <div id="q_foi_form_continue_2_a" class="au-form-group">
+                  <div id="q_foi_form_continue_2_a" class="au-form-group mb-12">
                     <div class="au-form-group">
                       <fieldset class="au-fieldset">
-                        <legend class="au-fieldset__legend">
-                          <h4>Tell us about the document(s) or information you're seeking</h4>
-                        </legend>
+                        <h3>Tell us about the document(s) or information you're seeking</h3>
 
                         <!-- irritable section for adding more than one doc -->
                         <div>
-                          <!-- <legend><h4>Document Type</h4></legend> -->
-                          <label for="email" class="au-label">Document reference number (if known) </label>
+                          <div class="au-form-group">
+                            <legend>Document Type</legend>
+                            <span class="au-hint-text"
+                              >This includes the most recent visa milestone for each application, medical records and the relevant dates. A
+                              screenshot of the applicant’s visa history in the Client Search Portal (CSP) provides all this information.
+                            </span>
 
-                          <input
-                            class="au-text-input au-text-input--width-lg"
-                            name="Document reference number"
-                            id="name"
-                            type="text"
-                            aria-required="true"
-                            aria-describedby="email"
-                            autocomplete="email"
-                          />
-                          <label for="email" class="au-label">Document date (if known)</label>
+                            <select id="document_1" class="au-select au-select" onchange="showChangedElement(this)">
+                              <option value="null">--Select--</option>
+                              <option value="na">Departmental brief</option>
+                              <option value="about_visa_application_history_yes">
+                                An overview of an applicant’s visa application history
+                              </option>
+                            </select>
+                          </div>
 
-                          <input
-                            class="au-text-input au-text-input--width-lg"
-                            name="Document reference number"
-                            id="name"
-                            type="text"
-                            aria-required="true"
-                            aria-describedby="email"
-                            autocomplete="email"
-                          />
+                          <div id="about_visa_application_history_yes" class="au-form-group" hidden>
+                            <p></p>
+                            <div class="au-control-input au-control-input--block">
+                              <input
+                                class="au-control-input__input"
+                                type="checkbox"
+                                name="checkbox_request_CSP"
+                                id="checkbox_request_CSP"
+                              />
+                              <label class="au-control-input__text" for="checkbox_request_CSP"
+                                >Request a Client Search Portal (CSP) Screenshot</label
+                              >
+                            </div>
+                          </div>
 
-                          <label for="email" class="au-label">Document details</label>
+                          <div class="au-form-group">
+                            <label for="email" class="au-label">Document reference number (if known) </label>
 
-                          <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"> </textarea>
+                            <input
+                              class="au-text-input au-text-input--width-lg"
+                              name="Document reference number"
+                              id="name"
+                              type="text"
+                              aria-required="true"
+                              aria-describedby="email"
+                              autocomplete="email"
+                            />
+                          </div>
+                          <div class="au-form-group">
+                            <label for="email" class="au-label">Document date (if known)</label>
+
+                            <input
+                              class="au-text-input au-text-input--width-lg"
+                              name="Document reference number"
+                              id="name"
+                              type="text"
+                              aria-required="true"
+                              aria-describedby="email"
+                              autocomplete="email"
+                            />
+                          </div>
+                          <div class="au-form-group">
+                            <label for="email" class="au-label">Document details</label>
+
+                            <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"> </textarea>
+                          </div>
                         </div>
                         <br />
                         <a class="" href="javascript:;">Add an additional document <em data-feather="plus-circle" class="icon"></em></a>
                       </fieldset>
                     </div>
-
-                    <div class="au-form-group mb-12">
-                      <p>Do you require an interpreter?</p>
-
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="radio"
-                          name="radio_foi_3"
-                          id="radio_foi_3_yes"
-                          onclick=" showElement('q_foi_form_submit_2')"
-                        />
-                        <label class="au-control-input__text" for="radio_foi_3_yes"> Yes </label>
-                      </div>
-                      <div class="au-control-input au-control-input--block">
-                        <input
-                          class="au-control-input__input"
-                          type="radio"
-                          name="radio_foi_3"
-                          id="radio_foi_3_no"
-                          onclick=" showElement('q_foi_form_submit_2')"
-                        />
-                        <label class="au-control-input__text" for="radio_foi_3_no"> No </label>
-                      </div>
-                    </div>
                   </div>
 
                   <!-- q_foi_form_submit_2 -->
-                  <div id="q_foi_form_submit_2" hidden>
+                  <div id="q_foi_form_submit_2" class="au-form-group">
                     <div class="au-form-group">
                       <p>Your request will be referred to the appropriate area for assessment.</p>
                       <p>For more information about how we use your request, please see our Privacy Statement </p>

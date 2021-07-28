@@ -628,10 +628,10 @@
                   </div>
 
                   <!-- group_not_related -->
-                  <div id="group_not_related" hidden>
+                  <div id="group_not_related" class="au-form-group" hidden>
                     <h3 id="not-related">Not related to the Department of Home Affairs</h3>
 
-                    <div id="not_related_1">
+                    <div id="not_related_1" class="au-form-group">
                       <div class="au-form-group">
                         <p>
                           The Department may hold information and documentation that has been provided by another authority or is publicly
@@ -715,7 +715,7 @@
                       >
                     </div>
 
-                    <div id="not_related_3" hidden>
+                    <div id="not_related_3" class="au-form-group" hidden>
                       <div class="au-form-group">
                         <p>Use this list to find out if your access request is quicker by a different channel.</p>
 
@@ -787,8 +787,8 @@
                             type="radio"
                             name="radio_channel"
                             id="radio_channel_7"
-                            onclick=" hideElement(['q_intro_end_1','q_intro_end_3','q_intro_end_4','q_intro_end_5','q_intro_end_6','q_intro_end_2']),
-                                  showElement('intro_fill_foi')"
+                            onclick=" hideElement(['q_intro_end_1','q_intro_end_3','q_intro_end_4','q_intro_end_5','q_intro_end_2','q_intro_end_6']),
+                                  showElement('q_intro_end_7')"
                           />
                           <label class="au-control-input__text" for="radio_channel_7">
                             Are you a <strong>previous Department staff member</strong> wanting to access copies of documentation?
@@ -835,83 +835,6 @@
                     <div id="q_intro_end_7" class="au-form-group" hidden>Please contact the relevant departmental section.</div>
                   </div>
 
-                  <!-- delete this section?  -->
-                  <div id="" class="au-form-group" hidden>
-                    <!-- <div id="intro_held_dep_1_no" class="au-form-group" hidden>
-                      <p>
-                        Do you think the information the Department owns about you is incomplete, incorrect, out of date or misleading and
-                        has been, is being, or is available to be used for an administrative purpose?
-                      </p>
-                      <div class="au-form-group">
-                        <div class="au-control-input au-control-input--block">
-                          <input
-                            class="au-control-input__input"
-                            type="radio"
-                            name="radio_intro_held_dep_2"
-                            id="radio_intro_held_dep_2_yes"
-                            onclick=" hideElement('intro_held_dep_2_no'),
-                                      showElement('intro_held_dep_2_yes')"
-                          />
-
-                          <label class="au-control-input__text" for="radio_intro_held_dep_2_yes"> Yes </label>
-                        </div>
-                        <div class="au-control-input au-control-input--block">
-                          <input
-                            class="au-control-input__input"
-                            type="radio"
-                            name="radio_intro_held_dep_2"
-                            id="radio_intro_held_dep_2_no"
-                            onclick=" hideElement('intro_held_dep_2_yes'),
-                                      showElement('intro_held_dep_2_no')"
-                          />
-                          <label class="au-control-input__text" for="radio_intro_held_dep_2_no">No </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="intro_held_dep_2_yes" class="au-form-group" hidden>
-                      Please complete form 424c
-                      <a href="https://immi.homeaffairs.gov.au/form-listing/forms/424c.pdf"
-                        >Request for amendment or annotation to personal records</a
-                      >
-                    </div> -->
-
-                    <div id="intro_held_dep_2_no" class="au-form-group" hidden>
-                      <h3>Access to information that is no longer <strong>held by the Department</strong></h3>
-                      <p>Are you wanting to access information that is more than 20 years old?</p>
-                      <div class="au-form-group">
-                        <div class="au-control-input au-control-input--block">
-                          <input
-                            class="au-control-input__input"
-                            type="radio"
-                            name="radio_intro_held_dep_3"
-                            id="radio_intro_held_dep_3_yes"
-                            onclick=" hideElement('intro_held_dep_3_no'),
-                                      showElement('intro_held_dep_3_yes')"
-                          />
-
-                          <label class="au-control-input__text" for="radio_intro_held_dep_3_yes"> Yes </label>
-                        </div>
-                        <div class="au-control-input au-control-input--block">
-                          <input
-                            class="au-control-input__input"
-                            type="radio"
-                            name="radio_intro_held_dep_3"
-                            id="radio_intro_held_dep_3_no"
-                            onclick=" hideElement('intro_held_dep_3_yes'),
-                                      showElement('intro_held_dep_3_no')"
-                          />
-                          <label class="au-control-input__text" for="radio_intro_held_dep_3_no">No </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="intro_held_dep_3_yes" class="au-form-group" hidden>
-                      <a href="https://www.naa.gov.au/help-your-research/ask-us- about-collection"
-                        >Visit the National Archives of Australia ‘ask a question’ website</a
-                      >
-                    </div>
-                  </div>
                   <div id="intro_fill_foi" class="au-form-group" hidden>
                     <p><a class="au-cta-link" href="form.html">Fill out the FOI request form </a></p>
                   </div>
