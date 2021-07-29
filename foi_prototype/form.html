@@ -482,7 +482,7 @@
                       type="radio"
                       name="radio_migration_agent"
                       id="radio_migration_agent_yes"
-                      onclick=" showElement('q_foi_form_submit'),
+                      onclick=" showElement('q_2'),
                                  showElement('q_migration_agent_yes'),
                                  hideElement('q_migration_agent_no')"
                     />
@@ -495,7 +495,7 @@
                       name="radio_migration_agent"
                       id="radio_migration_agent_no"
                       onclick=" showElement('q_migration_agent_no'),
-                                  showElement('q_foi_form_submit'),
+                                  showElement('q_2'),
                                   hideElement('q_seeking_access_under_18'),
                                   hideElement('q_migration_agent_yes')"
                     />
@@ -794,7 +794,7 @@
                       type="radio"
                       name="radio_foi_3"
                       id="radio_foi_3_yes"
-                      onclick=" showElement('q_foi_form_continue_2_a_2')"
+                      onclick=" showElement(['q_foi_form_continue_2_a_2', 'q_foi_form_continue_2_a_1_yes'])"
                     />
                     <label class="au-control-input__text" for="radio_foi_3_yes"> Yes </label>
                   </div>
@@ -804,10 +804,23 @@
                       type="radio"
                       name="radio_foi_3"
                       id="radio_foi_3_no"
-                      onclick=" showElement('q_foi_form_continue_2_a_2')"
+                      onclick=" showElement('q_foi_form_continue_2_a_2'),
+                                hideElement('q_foi_form_continue_2_a_1_yes')"
                     />
                     <label class="au-control-input__text" for="radio_foi_3_no"> No </label>
                   </div>
+                </div>
+
+                <div id="q_foi_form_continue_2_a_1_yes" class="au-form-group" hidden>
+                  <label for="interpreter_language" class="au-label">Language</label>
+                  <input
+                    class="au-text-input au-text-input--width-lg"
+                    name="interpreter_language"
+                    id="interpreter_language"
+                    type="text"
+                    aria-required="true"
+                    autocomplete="name"
+                  />
                 </div>
 
                 <div id="q_foi_form_continue_2_a_2" class="au-form-group" hidden>
@@ -1085,47 +1098,49 @@
                                 type="checkbox"
                                 name="checkbox_request_CSP"
                                 id="checkbox_request_CSP"
+                                onchange="toggleElement('input_request_CSP_yes');"
                               />
                               <label class="au-control-input__text" for="checkbox_request_CSP"
                                 >Request a Client Search Portal (CSP) Screenshot</label
                               >
                             </div>
                           </div>
+                          <div id="input_request_CSP_yes" class="au-form-group">
+                            <div class="au-form-group">
+                              <label for="email" class="au-label">Document reference number (if known) </label>
 
-                          <div class="au-form-group">
-                            <label for="email" class="au-label">Document reference number (if known) </label>
+                              <input
+                                class="au-text-input au-text-input--width-lg"
+                                name="Document reference number"
+                                id="name"
+                                type="text"
+                                aria-required="true"
+                                aria-describedby="email"
+                                autocomplete="email"
+                              />
+                            </div>
+                            <div class="au-form-group">
+                              <label for="email" class="au-label">Document date (if known)</label>
 
-                            <input
-                              class="au-text-input au-text-input--width-lg"
-                              name="Document reference number"
-                              id="name"
-                              type="text"
-                              aria-required="true"
-                              aria-describedby="email"
-                              autocomplete="email"
-                            />
-                          </div>
-                          <div class="au-form-group">
-                            <label for="email" class="au-label">Document date (if known)</label>
+                              <input
+                                class="au-text-input au-text-input--width-lg"
+                                name="Document reference number"
+                                id="name"
+                                type="text"
+                                aria-required="true"
+                                aria-describedby="email"
+                                autocomplete="email"
+                              />
+                            </div>
+                            <div class="au-form-group">
+                              <label for="email" class="au-label">Document details</label>
 
-                            <input
-                              class="au-text-input au-text-input--width-lg"
-                              name="Document reference number"
-                              id="name"
-                              type="text"
-                              aria-required="true"
-                              aria-describedby="email"
-                              autocomplete="email"
-                            />
-                          </div>
-                          <div class="au-form-group">
-                            <label for="email" class="au-label">Document details</label>
-
-                            <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"> </textarea>
+                              <textarea class="au-text-input au-text-input--block" name="textarea" id="textarea"> </textarea>
+                            </div>
+                            <br />
+                            <a class="" href="javascript:;">Add an additional document <em data-feather="plus-circle" class="icon"></em></a>
                           </div>
                         </div>
-                        <br />
-                        <a class="" href="javascript:;">Add an additional document <em data-feather="plus-circle" class="icon"></em></a>
                       </fieldset>
                     </div>
                   </div>
